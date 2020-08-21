@@ -1,0 +1,22 @@
+.articles__key-words {
+  margin: 30px 0 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .articles__key-words {
+    margin: calc((100vw - 768px) / (1440 - 768) * (30 - 15) + 15px) 0 0;
+
+    font-size: calc((100vw - 768px) / (1440 - 768) * (18 - 14) + 14px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .articles__key-words {
+    margin: 16px 0 0;
+
+    font-size: calc((100vw - 320px) / (768 -320) * (14 - 18) + 18px);
+  }
+}
+
+.articles__key-words_span {
+  font-weight: 500;
+}

@@ -1,0 +1,14 @@
+.page__articles {
+  margin-bottom: 56px;
+}
+
+@media screen and (max-width: 1440px) {
+  .page__articles {
+    margin-bottom: calc((100vw - 768px) / (1440 - 768) * (56 - 32) + 32px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .page__articles {
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,9 @@
+@import '__undertitle/articles__undertitle.css';
+@import '__title/articles__title.css';
+@import '__key-words/articles__key-words.css';
+
+.articles {
+  font: normal 400 18px/24px Roboto, Arial, Helvetica;
+  color: #1a1b22;
+  grid-column: 2;
+}

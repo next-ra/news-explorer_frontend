@@ -3,6 +3,7 @@
 @import '__cards/page__cards.css';
 @import '__about/page__about.css';
 @import '__footer/page__footer.css';
+@import '__articles/page__articles.css';
 
 .page {
   min-width: 320px;

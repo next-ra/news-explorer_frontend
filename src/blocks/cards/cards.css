@@ -1,7 +1,7 @@
 @import '__title/cards__title.css';
 @import '__wrapper/cards__wrapper.css';
 @import '__button/cards__button.css';
-
+@import '_articles-page/cards_articles-page.css';
 .cards {
   box-sizing: border-box;
   background: #f5f6f7;
