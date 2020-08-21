@@ -46,7 +46,7 @@
 .header_dark::after {
   background: #fff;
   box-shadow: inset 0px -1px 0px #d1d2d6;
-  z-index: 4;
+  z-index: 5;
 }
 
 @media screen and (max-width: 650px) {

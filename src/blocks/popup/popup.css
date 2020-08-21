@@ -1,0 +1,35 @@
+@import '__button/popup__button.css';
+@import '__close/popup__close.css';
+@import '__content/popup__content.css';
+@import '__error/popup__error.css';
+@import '__form/popup__form.css';
+@import '__input/popup__input.css';
+@import '__label/popup__label.css';
+@import '__redirect/popup__redirect.css';
+@import '__text/popup__text.css';
+@import '__title/popup__title.css';
+@import '_active/popup_active.css';
+
+.popup {
+  grid-template: 2;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  place-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  z-index: 1000;
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .popup {
+    place-items: flex-start center;
+    padding: 0 15px;
+  }
+}

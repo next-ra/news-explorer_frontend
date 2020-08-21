@@ -1,10 +1,10 @@
 .header__link_highlighted.header__link_highlighted_dark {
   color: #1a1b22;
-  transition: 0.4s;
+  transition: color 0.4s;
 }
 .header__link_highlighted_dark:hover {
   color: #347eff;
-  transition: 0.4s;
+  transition: color 0.4s;
 }
 
 .header__link_highlighted.header__link_highlighted_dark::after {

@@ -99,7 +99,7 @@
       <div class="not-found">
         <img
           src="<%=require('../../images/not-found_v1.png')%>"
-          alt=""
+          alt="ничего не найдено"
           class="not-found__image"
         />
         <h2 class="not-found__title">Ничего не найдено</h2>
@@ -159,7 +159,7 @@
           <div class="card">
             <img
               src="<%=require('../../images/forest.png')%>"
-              alt="парки"
+              alt="леса"
               class="card__image"
             />
             <div class="card__bookmark">
@@ -202,7 +202,7 @@
           <div class="card">
             <img
               src="<%=require('../../images/taiga.png')%>"
-              alt="парки"
+              alt="тайга"
               class="card__image"
             />
             <div class="card__bookmark">
@@ -255,7 +255,7 @@
           <img
             class="about__avatar"
             src="<%=require('../../images/avatar.png')%>"
-            alt=""
+            alt="avatar"
         /></picture>
 
         <div class="about__wrapper">
@@ -284,14 +284,21 @@
               <a href="#" class="footer__link">Главная</a>
             </li>
             <li class="footer__links-item">
-              <a href="#" class="footer__link" target="_blank"
+              <a
+                href="https://praktikum.yandex.ru/"
+                class="footer__link"
+                target="_blank"
                 >Яндекс.Практикум</a
               >
             </li>
           </ul>
           <ul class="footer__social-links">
             <li class="footer__social-links-item">
-              <a href="" class="footer__social-link">
+              <a
+                href="https://github.com/next-ra"
+                class="footer__social-link"
+                target="_blank"
+              >
                 <svg
                   width="22"
                   height="21"
@@ -310,7 +317,11 @@
               </a>
             </li>
             <li class="footer__social-links-item">
-              <a href="" class="footer__social-link">
+              <a
+                href="https://www.facebook.com/"
+                class="footer__social-link"
+                target="_blank"
+              >
                 <svg
                   width="20"
                   height="20"
@@ -330,6 +341,161 @@
         </div>
       </footer>
     </div>
+    <!-- Попап sing-in -->
+    <div class="popup" id="popup-sign-in">
+      <div class="popup__content">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="popup__close"
+        >
+          <path
+            d="M22.3566 20L31.1781 28.8215L28.8211 31.1785L18.3497 20.7071C17.9592 20.3166 17.9592 19.6834 18.3497 19.2929L28.8211 8.82147L31.1781 11.1785L22.3566 20Z"
+            fill="white"
+          />
+          <path
+            d="M18.1307 20L9.30919 28.8215L11.6662 31.1785L22.1376 20.7071C22.5281 20.3166 22.5281 19.6834 22.1376 19.2929L11.6662 8.82147L9.30919 11.1785L18.1307 20Z"
+            fill="white"
+          />
+        </svg>
+
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" novalidate>
+          <label class="popup__label" for="email">Email</label>
+          <input
+            class="popup__input"
+            placeholder="Email"
+            name="email"
+            type="email"
+            pattern="^([A-Za-z0-9]+([._-](?=[A-Za-z0-9]))?[A-Za-z0-9]*){1,}@[a-z0-9._-]+\.[a-z]{2,8}$"
+            required
+          />
+          <p class="popup__error">Неправильный формат email</p>
+
+          <label class="popup__label" for="password">Пароль</label>
+          <input
+            class="popup__input"
+            placeholder="Password"
+            name="password"
+            type="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            required
+          />
+          <p class="popup__error">Минимум 8 знаков</p>
+          <p class="popup__error">Ошибка сервера</p>
+          <button class="button popup__button" disabled>Войти</button>
+        </form>
+        <p class="popup__text">
+          или
+          <a href="" class="popup__redirect">Зарегистрироваться</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Попап sing-up -->
+    <div class="popup" id="popup-sign-up">
+      <div class="popup__content">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="popup__close"
+          id="close"
+        >
+          <path
+            d="M22.3566 20L31.1781 28.8215L28.8211 31.1785L18.3497 20.7071C17.9592 20.3166 17.9592 19.6834 18.3497 19.2929L28.8211 8.82147L31.1781 11.1785L22.3566 20Z"
+            fill="white"
+          />
+          <path
+            d="M18.1307 20L9.30919 28.8215L11.6662 31.1785L22.1376 20.7071C22.5281 20.3166 22.5281 19.6834 22.1376 19.2929L11.6662 8.82147L9.30919 11.1785L18.1307 20Z"
+            fill="white"
+          />
+        </svg>
+
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" novalidate>
+          <label class="popup__label" for="email">Email</label>
+          <input
+            class="popup__input"
+            placeholder="Email"
+            name="email"
+            type="email"
+            required
+            pattern="^([A-Za-z0-9]+([._-](?=[A-Za-z0-9]))?[A-Za-z0-9]*){1,}@[a-z0-9._-]+\.[a-z]{2,8}$"
+          />
+          <p class="popup__error">Неправильный формат email</p>
+
+          <label class="popup__label" for="password">Пароль</label>
+          <input
+            class="popup__input popup__input_password"
+            placeholder="Password"
+            name="password"
+            type="password"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+          />
+          <p class="popup__error">Минимум 8 знаков</p>
+          <label class="popup__label" for="name">Имя</label>
+          <input
+            class="popup__input popup__input_password"
+            placeholder="Введите своё имя"
+            name="name"
+            type="text"
+            pattern="^[А-Я][а-я]+(-[А-Я][а-я]+)?$"
+          />
+          <p class="popup__error">
+            Только кириллица, минимум 2 знака
+          </p>
+          <p class="popup__error">
+            Такое пользователь уже есть
+          </p>
+          <button class="button popup__button" disabled>
+            Зарегистрироваться
+          </button>
+        </form>
+        <p class="popup__text">
+          или
+          <a href="" class="popup__redirect">Войти</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Попап пользователь зарегестрирован -->
+    <div class="popup" id="popup-success">
+      <div class="popup__content">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="popup__close"
+        >
+          <path
+            d="M22.3566 20L31.1781 28.8215L28.8211 31.1785L18.3497 20.7071C17.9592 20.3166 17.9592 19.6834 18.3497 19.2929L28.8211 8.82147L31.1781 11.1785L22.3566 20Z"
+            fill="white"
+          />
+          <path
+            d="M18.1307 20L9.30919 28.8215L11.6662 31.1785L22.1376 20.7071C22.5281 20.3166 22.5281 19.6834 22.1376 19.2929L11.6662 8.82147L9.30919 11.1785L18.1307 20Z"
+            fill="white"
+          />
+        </svg>
+
+        <h3 class="popup__title popup__title_success">
+          Пользователь успешно зарегистрирован
+        </h3>
+
+        <a href="" class="popup__redirect popup__redirect_success"
+          >Выполнить вход</a
+        >
+      </div>
+    </div>
+
     <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
 </html>
