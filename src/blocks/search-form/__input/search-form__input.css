@@ -14,7 +14,9 @@
 
   outline: none;
 }
-
+.search-form__input:focus {
+  border: 1px solid #347eff;
+}
 @media screen and (max-width: 1440px) {
   .search-form__input {
     height: calc((100vw - 768px) / (1440 - 768) * (64 - 56) + 56px);
