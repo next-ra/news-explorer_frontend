@@ -1,0 +1,20 @@
+.about__avatar {
+  display: block;
+  border-radius: 50%;
+  margin: 48px 0 0;
+  object-fit: cover;
+}
+@media screen and (max-width: 1440px) {
+  .about__avatar {
+    margin: calc((100vw - 768px) / (1440 - 768) * (48 - 30) + 30px) 0 0;
+    height: calc((100vw - 768px) / (1440 - 768) * (464 - 232) + 232px);
+    width: calc((100vw - 768px) / (1440 - 768) * (464 - 232) + 232px);
+  }
+}
+@media screen and (max-width: 650px) {
+  .about__avatar {
+    margin: 0 auto;
+    height: calc((100vw - 320px) / (768 - 320) * (232 - 272) + 272px);
+    width: calc((100vw - 320px) / (768 - 320) * (232 - 272) + 272px);
+  }
+}

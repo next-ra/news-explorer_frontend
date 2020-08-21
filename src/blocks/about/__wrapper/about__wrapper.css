@@ -1,0 +1,19 @@
+.about__wrapper {
+  margin: 76px 0 0 56px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__wrapper {
+    margin: calc((100vw - 768px) / (1440 - 768) * (76 - 9) + 9px) 0 0
+      calc((100vw - 768px) / (1440 - 768) * (56 - 34) + 34px);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .about__wrapper {
+    margin: 0;
+    max-width: 100%;
+    margin-top: 25px;
+  }
+}

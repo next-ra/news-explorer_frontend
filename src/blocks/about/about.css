@@ -1,0 +1,17 @@
+@import '__avatar/about__avatar.css';
+@import '__text/about__text.css';
+@import '__title/about__title.css';
+@import '__wrapper/about__wrapper.css';
+
+.about {
+  font-family: Roboto, Roboto-Slab, Sans-Pro, Inter, Arial, Helvetica;
+  box-sizing: border-box;
+  display: flex;
+}
+
+@media screen and (max-width: 650px) {
+  .about {
+    box-sizing: border-box;
+    display: block;
+  }
+}
