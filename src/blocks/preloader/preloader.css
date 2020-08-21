@@ -1,0 +1,13 @@
+@import './_active/preloader_active.css';
+@import './__spinner/preloader__spinner.css';
+@import './__text/preloader__text.css';
+
+.preloader {
+  display: grid;
+  place-items: center;
+  grid-column: 2;
+
+  margin: 80px 0;
+
+  display: none;
+}

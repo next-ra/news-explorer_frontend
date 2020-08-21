@@ -88,6 +88,24 @@
         </div>
       </main>
     </div>
+    <div class="content-wrapper content-wrapper_bg-grey">
+      <div id="preloader" class="preloader preloader_active">
+        <div class="preloader__spinner"></div>
+        <p class="preloader__text">идет поиск новостей...</p>
+      </div>
+
+      <div class="not-found">
+        <img
+          src="<%=require('../../images/not-found_v1.png')%>"
+          alt=""
+          class="not-found__image"
+        />
+        <h2 class="not-found__title">Ничего не найдено</h2>
+        <p class="not-found__subtitle">
+          К сожалению по вашему запросу ничего не найдено
+        </p>
+      </div>
+    </div>
     <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
 </html>

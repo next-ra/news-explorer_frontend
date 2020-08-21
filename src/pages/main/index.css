@@ -7,3 +7,5 @@
 @import '../../blocks/search/search.css';
 @import '../../blocks/search-form/search-form.css';
 @import '../../blocks/button/button.css';
+@import '../../blocks/preloader/preloader.css';
+@import '../../blocks/not-found/not-found.css';
