@@ -1,0 +1,10 @@
+.search__wrapper {
+  max-width: 608px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .search__wrapper {
+    max-width: calc((100vw - 768px) / (1440 - 768) * (608 - 448) + 448px);
+  }
+}

@@ -1,0 +1,43 @@
+@import '_dark/header__link_dark.css';
+
+.header__link {
+  font: normal 500 18px/24px Roboto, Arial, Helvetica;
+  color: #b6bcbf;
+
+  text-decoration: none;
+  height: 100%;
+
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  margin-left: 34px;
+  transition: color 0.2s;
+}
+
+.header__link:hover {
+  color: #347eff;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 1440px) {
+  .header__link {
+    margin-left: calc((100vw - 768px) / (1440 - 768) * (34 - 16) + 16px);
+
+    font-size: calc((100vw - 768px) / (1440 - 768) * (18 - 16) + 16px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .header__link {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__link {
+    height: auto;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0 0 40px;
+    color: #fff;
+  }
+}

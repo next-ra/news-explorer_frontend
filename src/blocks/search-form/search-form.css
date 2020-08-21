@@ -1,0 +1,28 @@
+@import '__input/search-form__input.css';
+@import '__button/search-form__button.css';
+
+.search-form {
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 62px;
+}
+
+@media screen and (max-width: 1440px) {
+  .search-form {
+    margin-top: calc((100vw - 768px) / (1440 - 768) * (62 - 48) + 48px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    margin-top: calc((100vw - 320px) / (768 - 320) * (48 - 122) + 122px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-form {
+    display: flex;
+    flex-direction: column;
+  }
+}

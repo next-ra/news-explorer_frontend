@@ -1,4 +1,9 @@
-.test {
-  font-size: 40px;
-  color: rebeccapurple;
-}
+@import '../../vendor/fonts.css';
+@import '../../blocks/page/page.css';
+@import '../../blocks/content-wrapper/content-wrapper.css';
+@import '../../blocks/header/header.css';
+@import '../../blocks/menu-icon/menu-icon.css';
+@import '../../blocks/nav-box/nav-box.css';
+@import '../../blocks/search/search.css';
+@import '../../blocks/search-form/search-form.css';
+@import '../../blocks/button/button.css';

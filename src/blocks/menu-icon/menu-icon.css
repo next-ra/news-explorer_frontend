@@ -1,0 +1,67 @@
+@media screen and (max-width: 650px) {
+  .menu-icon {
+    width: 16px;
+    height: 16px;
+
+    position: relative;
+
+    padding-right: 3px;
+
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  .menu-icon:hover::after {
+    background-color: #347eff;
+    transition: background-color 0.4s;
+  }
+  .menu-icon:hover::before {
+    background-color: #347eff;
+    transition: background-color 0.4s;
+  }
+
+  .menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+
+    background-color: #fff;
+
+    top: 25%;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s,
+      background-color 1s;
+  }
+
+  .menu-icon::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+
+    background-color: #fff;
+
+    bottom: 25%;
+    transition: transform 0.2s ease-in, bottom 0.2s linear 0.2s,
+      background-color 1s;
+  }
+
+  .menu-icon__active::after {
+    top: calc((50%) - 1px);
+    transform: rotate(45deg);
+    transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+  }
+
+  .menu-icon__active::before {
+    bottom: calc((50%) - 1px);
+    transform: rotate(-45deg);
+    transition: bottom 0.2s ease-in, transform 0.2s linear 0.2s;
+  }
+}
+
+.menu-icon_dark::after {
+  background-color: #1a1b22;
+}
+.menu-icon_dark::before {
+  background-color: #1a1b22;
+}
