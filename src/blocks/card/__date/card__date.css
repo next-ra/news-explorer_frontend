@@ -1,0 +1,18 @@
+.card__date {
+  font: normal 400 18px/24px Sans-Pro, Arial, Helvetica;
+  color: #b6bcbf;
+
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 1440px) {
+  .card__date {
+    padding-top: calc((100vw - 768px) / (1440 - 768) * (10 - 5) + 5px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__date {
+    padding-top: 5px;
+  }
+}

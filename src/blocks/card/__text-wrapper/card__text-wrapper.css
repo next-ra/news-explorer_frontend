@@ -1,0 +1,7 @@
+.card__text-wrapper {
+  padding-top: 10px;
+  grid-area: t;
+
+  display: flex;
+  flex-direction: column;
+}

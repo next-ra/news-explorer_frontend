@@ -11,3 +11,15 @@ menuIcon.onclick = () => {
   page.classList.toggle('page_menu_active');
   header.classList.toggle('header__fixed');
 };
+
+const cards = document.querySelectorAll('.card');
+cards.forEach((card) => {
+  const button = card.querySelector('.card__bookmark');
+  const svg = card.querySelector('.card__path');
+
+  button.addEventListener('click', () => {
+    const activeClassSvg = 'card__path_marked';
+
+    svg.classList.toggle(activeClassSvg);
+  });
+});

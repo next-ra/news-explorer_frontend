@@ -1,0 +1,4 @@
+.card__trash-path {
+  transition: fill 0.5s;
+  position: relative;
+}

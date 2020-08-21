@@ -1,0 +1,25 @@
+.card__text {
+  font: normal 400 16px/ 22px Roboto, Arial, Helvetica;
+  color: #1a1b22;
+
+  margin: 16px 0 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1440px) {
+  .card__text {
+    margin: calc((100vw - 768px) / (1440 - 768) * (16 - 6) + 6px) 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__text {
+    margin: 6px 0 0;
+
+    -webkit-line-clamp: 3;
+  }
+}

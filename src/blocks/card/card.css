@@ -1,0 +1,51 @@
+@import '__bookmark/card__bookmark.css';
+@import '__date/card__date.css';
+@import '__image/card__image.css';
+@import '__source/card__source.css';
+@import '__text-wrapper/card__text-wrapper.css';
+@import '__text/card__text.css';
+@import '__title/card__title.css';
+@import '__path/card__path.css';
+@import '__trash-path/card__trash-path.css';
+@import '__label/card__label.css';
+@import '__tooltip/card__tooltip.css';
+@import '__tooltip-text/card__tooltip-text.css';
+@import '__label-text/card__label-text.css';
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: 272px auto;
+  grid-template-areas:
+    'i i i i i i i i i i i i i i i i i i i i'
+    'l t t t t t t t t t t t t t t t t t t r';
+
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  max-width: 400px;
+  height: 576px;
+
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+}
+
+@media screen and (max-width: 1440px) {
+  .card {
+    height: calc((100vw - 768px) / (1440 - 768) * (576 - 420) + 420px);
+    grid-template-rows:
+      calc((100vw - 768px) / (1440 - 768) * (272 - 150) + 150px)
+      auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card {
+    height: calc((100vw - 320px) / (768 - 320) * (420 - 440) + 440px);
+    grid-template-rows:
+      calc((100vw - 320px) / (768 - 320) * (150 - 196) + 196px)
+      auto;
+    max-width: 320px;
+    justify-self: center;
+  }
+}

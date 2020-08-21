@@ -1,5 +1,6 @@
 @import '__header/page__header.css';
 @import '__search/page__search.css';
+@import '__cards/page__cards.css';
 
 .page {
   min-width: 320px;

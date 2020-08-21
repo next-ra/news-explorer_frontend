@@ -1,0 +1,11 @@
+.page__cards {
+  grid-column: 2;
+  margin: 32px 0 28px;
+}
+
+@media screen and (max-width: 768px) {
+  .page__cards {
+    margin: calc((100vw - 320px) / (768 - 320) * (32 - 22) + 22px) 0
+      calc((100vw - 320px) / (768 - 320) * (28 - 36) + 36px);
+  }
+}

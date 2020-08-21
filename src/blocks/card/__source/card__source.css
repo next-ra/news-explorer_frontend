@@ -1,0 +1,8 @@
+.card__source {
+  font: normal 700 16px/20px Roboto-Slab, Arial, Helvetica;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+
+  margin: auto 0 24px;
+}

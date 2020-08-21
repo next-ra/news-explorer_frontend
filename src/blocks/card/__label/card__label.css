@@ -1,0 +1,30 @@
+.card__label {
+  height: 40px;
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 24px;
+  left: 24px;
+
+  background-color: #fff;
+  border-radius: 10px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 1440px) {
+  .card__label {
+    top: calc((100vw - 768px) / (1440 - 768) * (24 - 8) + 8px);
+    left: calc((100vw - 768px) / (1440 - 768) * (24 - 8) + 8px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__label {
+    top: calc((100vw - 320px) / (768 - 320) * (8 - 16) + 16px);
+    left: calc((100vw - 320px) / (768 - 320) * (8 - 16) + 16px);
+  }
+}
