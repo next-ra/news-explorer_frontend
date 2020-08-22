@@ -79,6 +79,7 @@
               type="text"
               placeholder="Политика"
               name="search"
+              required
             />
             <button
               id="search-button"
@@ -366,10 +367,11 @@
 
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" novalidate>
-          <label class="popup__label" for="email">Email</label>
+          <label class="popup__label" for="sign-in-email">Email</label>
           <input
             class="popup__input"
             placeholder="Email"
+            id="sign-in-email"
             name="email"
             type="email"
             pattern="^([A-Za-z0-9]+([._-](?=[A-Za-z0-9]))?[A-Za-z0-9]*){1,}@[a-z0-9._-]+\.[a-z]{2,8}$"
@@ -377,10 +379,11 @@
           />
           <p class="popup__error">Неправильный формат email</p>
 
-          <label class="popup__label" for="password">Пароль</label>
+          <label class="popup__label" for="sign-in-password">Пароль</label>
           <input
             class="popup__input"
             placeholder="Password"
+            id="sign-in-password"
             name="password"
             type="password"
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
@@ -421,9 +424,10 @@
 
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" novalidate>
-          <label class="popup__label" for="email">Email</label>
+          <label class="popup__label" for="sign-up-email">Email</label>
           <input
             class="popup__input"
+            id="sign-up-email"
             placeholder="Email"
             name="email"
             type="email"
@@ -432,20 +436,22 @@
           />
           <p class="popup__error">Неправильный формат email</p>
 
-          <label class="popup__label" for="password">Пароль</label>
+          <label class="popup__label" for="sign-up-password">Пароль</label>
           <input
             class="popup__input popup__input_password"
             placeholder="Password"
+            id="sign-up-password"
             name="password"
             type="password"
             required
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
           />
           <p class="popup__error">Минимум 8 знаков</p>
-          <label class="popup__label" for="name">Имя</label>
+          <label class="popup__label" for="sign-up-name">Имя</label>
           <input
             class="popup__input popup__input_password"
             placeholder="Введите своё имя"
+            id="sign-up-name"
             name="name"
             type="text"
             pattern="^[А-Я][а-я]+(-[А-Я][а-я]+)?$"
