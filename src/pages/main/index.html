@@ -39,28 +39,30 @@
             >
           </li>
           <li class="nav-box__item">
-            <a href="./articles.html" class="header__link"
+            <a id="saved-articles" href="./articles.html" class="header__link"
               >Сохраненные статьи</a
             >
           </li>
           <li class="nav-box__item">
             <button class="header__button">
-              Грета
-              <svg
-                class="button__auth-svg"
-                width="18"
-                height="16"
-                viewBox="0 0 18 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M6 2L2 2L2 14H6V16H2C0.89543 16 0 15.1046 0 14V2C0 0.89543 0.895432 0 2 0H6V2ZM13.5856 9.00002L9.29274 13.1339L10.707 14.4958L17.4141 8.03706L10.707 1.57837L9.29274 2.9402L13.5856 7.0741H4V9.00002H13.5856Z"
-                  fill="white"
-                />
-              </svg>
+              <template class="svg-template"
+                ><svg
+                  class="button__auth-svg"
+                  width="18"
+                  height="16"
+                  viewBox="0 0 18 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="button__auth-svg"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6 2L2 2L2 14H6V16H2C0.89543 16 0 15.1046 0 14V2C0 0.89543 0.895432 0 2 0H6V2ZM13.5856 9.00002L9.29274 13.1339L10.707 14.4958L17.4141 8.03706L10.707 1.57837L9.29274 2.9402L13.5856 7.0741H4V9.00002H13.5856Z"
+                    fill="white"
+                  />
+                </svg>
+              </template>
             </button>
           </li>
         </ul>
@@ -69,6 +71,7 @@
       <main class="search page__search">
         <div class="search__wrapper">
           <h1 class="search__title">Что в мире творится?</h1>
+
           <p class="search__subtitle">
             Находите самые свежие статьи на любую тему и сохраняйте в своём
             личном кабинете.
@@ -79,12 +82,16 @@
               type="text"
               placeholder="Политика"
               name="search"
+              minlength="2"
+              maxlength="30"
               required
             />
+            <p class="search__error" id="search-error"></p>
             <button
               id="search-button"
               class="button search-form__button"
               type="submit"
+              disabled
             >
               Искать
             </button>
@@ -94,7 +101,7 @@
     </div>
     <!-- PRELOADER -->
     <div class="content-wrapper content-wrapper_bg-grey">
-      <div id="preloader" class="preloader preloader_active">
+      <div id="preloader" class="preloader">
         <div class="preloader__spinner"></div>
         <p class="preloader__text">идет поиск новостей...</p>
       </div>
@@ -114,136 +121,48 @@
     <!-- CARDS -->
     <div class="content-wrapper content-wrapper_bg-grey">
       <section class="cards page__cards">
-        <h2 class="cards__title">Результаты поиска</h2>
+        <h2 class="cards__title cards__title_inactive">Результаты поиска</h2>
         <div class="cards__wrapper">
           <!--  card -->
-          <div class="card">
-            <img
-              src="<%=require('../../images/parks.png')%>"
-              alt="парки"
-              class="card__image"
-            />
-            <div class="card__bookmark">
-              <svg
-                class="h"
-                width="14"
-                height="19"
-                viewBox="0 0 14 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
-                  stroke="#B6BCBF"
-                  stroke-width="2"
-                  class="card__path"
-                />
-              </svg>
-            </div>
-            <div class="card__tooltip">
-              <p class="card__tooltip-text">
-                Добавить в избранное
-              </p>
-            </div>
-            <div class="card__text-wrapper">
-              <time class="card__date" datetime="2019-08-02 19:00"
-                >2 августа, 2019</time
-              >
-              <h3 class="card__title">Национальное достояние - парки</h3>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-          </div>
-          <!-- card -->
-          <div class="card">
-            <img
-              src="<%=require('../../images/forest.png')%>"
-              alt="леса"
-              class="card__image"
-            />
-            <div class="card__bookmark">
-              <svg
-                width="14"
-                height="19"
-                viewBox="0 0 14 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
-                  stroke="#B6BCBF"
-                  stroke-width="2"
-                  class="card__path"
-                />
-              </svg>
-            </div>
-            <div class="card__tooltip">
-              <p class="card__tooltip-text">
-                Добавить в избранное
-              </p>
-            </div>
-            <div class="card__text-wrapper">
-              <time class="card__date" datetime="2019-08-02 19:00"
-                >2 августа, 2019</time
-              >
-              <h3 class="card__title">
-                Лесные огоньки: история одной фотографии
-              </h3>
-              <p class="card__text">
-                Фотограф отвлеклась от освещения суровой политической реальности
-                Мексики, чтобы запечатлеть ускользающую красоту одного из
-                местных чудес природы.
-              </p>
-              <p class="card__source">Медуза</p>
-            </div>
-          </div>
-          <!-- card -->
-          <div class="card">
-            <img
-              src="<%=require('../../images/taiga.png')%>"
-              alt="тайга"
-              class="card__image"
-            />
-            <div class="card__bookmark">
-              <svg
-                width="14"
-                height="19"
-                viewBox="0 0 14 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
-                  stroke="#B6BCBF"
-                  stroke-width="2"
-                  class="card__path"
-                />
-              </svg>
-            </div>
-            <div class="card__tooltip">
-              <p class="card__tooltip-text">
-                Добавить в избранное
-              </p>
-            </div>
-            <div class="card__text-wrapper">
-              <time class="card__date" datetime="2019-08-02 19:00"
-                >2 августа, 2019</time
-              >
-              <h3 class="card__title">
-                «Первозданная тайга»: новый фотопроект Игоря Шпиленка
-              </h3>
-              <p class="card__text">
-                Знаменитый фотограф снимает первозданные леса России, чтобы
-                рассказать о необходимости их сохранения. В этот раз он
-                отправился в Двинско-Пинежскую тайгу, где...
-              </p>
-              <p class="card__source">Риа</p>
-            </div>
-          </div>
+          <template class="card-template"
+            ><div class="card">
+              <a href="#" target="_blank" class="card__link"></a>
+              <img src="" alt="Обложка статьи" class="card__image" />
+              <div class="card__bookmark">
+                <svg
+                  class="h"
+                  width="14"
+                  height="19"
+                  viewBox="0 0 14 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.38218 12.7137L1 16.9425V1L13 1V16.9425L7.61782 12.7137L7 12.2283L6.38218 12.7137Z"
+                    stroke="#B6BCBF"
+                    stroke-width="2"
+                    class="card__path"
+                  />
+                </svg>
+              </div>
+              <div class="card__tooltip">
+                <p class="card__tooltip-text">Войдите, чтобы сохранить</p>
+              </div>
+              <div class="card__text-wrapper">
+                <time class="card__date" datetime="2019-08-02 19:00"
+                  >2 августа, 2019</time
+                >
+                <h3 class="card__title">Национальное достояние - парки</h3>
+                <p class="card__text">
+                  В 2016 году Америка отмечала важный юбилей: сто лет назад
+                  здесь начала складываться система национальных парков –
+                  охраняемых территорий, где и сегодня каждый может приобщиться
+                  к природе.
+                </p>
+                <p class="card__source">Лента.ру</p>
+              </div>
+            </div></template
+          >
         </div>
         <button class="button cards__button">Показать еще</button>
       </section>
@@ -275,7 +194,7 @@
       </div>
     </div>
     <!-- FOOTER -->
-    <div class="content-wrapper">
+    <div class="content-wrapper content-wrapper_footer-bottom">
       <footer class="footer page__footer">
         <p class="footer__copyright">
           &copy;
@@ -356,10 +275,12 @@
           class="popup__close"
         >
           <path
+            class="popup__close"
             d="M22.3566 20L31.1781 28.8215L28.8211 31.1785L18.3497 20.7071C17.9592 20.3166 17.9592 19.6834 18.3497 19.2929L28.8211 8.82147L31.1781 11.1785L22.3566 20Z"
             fill="white"
           />
           <path
+            class="popup__close"
             d="M18.1307 20L9.30919 28.8215L11.6662 31.1785L22.1376 20.7071C22.5281 20.3166 22.5281 19.6834 22.1376 19.2929L11.6662 8.82147L9.30919 11.1785L18.1307 20Z"
             fill="white"
           />
@@ -377,7 +298,7 @@
             pattern="^([A-Za-z0-9]+([._-](?=[A-Za-z0-9]))?[A-Za-z0-9]*){1,}@[a-z0-9._-]+\.[a-z]{2,8}$"
             required
           />
-          <p class="popup__error">Неправильный формат email</p>
+          <p class="popup__error" id="email-error">Неправильный формат email</p>
 
           <label class="popup__label" for="sign-in-password">Пароль</label>
           <input
@@ -386,16 +307,19 @@
             id="sign-in-password"
             name="password"
             type="password"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            minlength="8"
+            maxlength="30"
             required
           />
-          <p class="popup__error">Минимум 8 знаков</p>
-          <p class="popup__error">Ошибка сервера</p>
+          <p class="popup__error" id="password-error">Минимум 8 знаков</p>
+          <p class="popup__error" id="server-error">Ошибка сервера</p>
           <button class="button popup__button" disabled>Войти</button>
         </form>
         <p class="popup__text">
           или
-          <a href="" class="popup__redirect">Зарегистрироваться</a>
+          <a href="" class="popup__redirect" id="signin-redirect"
+            >Зарегистрироваться</a
+          >
         </p>
       </div>
     </div>
@@ -413,10 +337,12 @@
           id="close"
         >
           <path
+            class="popup__close"
             d="M22.3566 20L31.1781 28.8215L28.8211 31.1785L18.3497 20.7071C17.9592 20.3166 17.9592 19.6834 18.3497 19.2929L28.8211 8.82147L31.1781 11.1785L22.3566 20Z"
             fill="white"
           />
           <path
+            class="popup__close"
             d="M18.1307 20L9.30919 28.8215L11.6662 31.1785L22.1376 20.7071C22.5281 20.3166 22.5281 19.6834 22.1376 19.2929L11.6662 8.82147L9.30919 11.1785L18.1307 20Z"
             fill="white"
           />
@@ -426,6 +352,7 @@
         <form class="popup__form" novalidate>
           <label class="popup__label" for="sign-up-email">Email</label>
           <input
+            oninput
             class="popup__input"
             id="sign-up-email"
             placeholder="Email"
@@ -434,45 +361,41 @@
             required
             pattern="^([A-Za-z0-9]+([._-](?=[A-Za-z0-9]))?[A-Za-z0-9]*){1,}@[a-z0-9._-]+\.[a-z]{2,8}$"
           />
-          <p class="popup__error">Неправильный формат email</p>
+          <p class="popup__error" id="email-error"></p>
 
           <label class="popup__label" for="sign-up-password">Пароль</label>
           <input
-            class="popup__input popup__input_password"
+            class="popup__input"
             placeholder="Password"
             id="sign-up-password"
             name="password"
             type="password"
             required
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            minlength="8"
+            maxlength="30"
           />
-          <p class="popup__error">Минимум 8 знаков</p>
-          <label class="popup__label" for="sign-up-name">Имя</label>
+          <p class="popup__error" id="password-error"></p>
+          <label class="popup__label" for="username">Имя</label>
           <input
-            class="popup__input popup__input_password"
+            class="popup__input"
             placeholder="Введите своё имя"
-            id="sign-up-name"
-            name="name"
+            id="username"
+            name="username"
             type="text"
-            pattern="^[А-Я][а-я]+(-[А-Я][а-я]+)?$"
+            minlength="2"
+            maxlength="30"
+            required
           />
-          <p class="popup__error">
-            Только кириллица, минимум 2 знака
-          </p>
-          <p class="popup__error">
-            Такое пользователь уже есть
-          </p>
-          <button class="button popup__button" disabled>
-            Зарегистрироваться
-          </button>
+          <p class="popup__error" id="username-error"></p>
+          <p class="popup__error" id="server-error">Ошибка сервера</p>
+          <button class="button popup__button">Зарегистрироваться</button>
         </form>
         <p class="popup__text">
           или
-          <a href="" class="popup__redirect">Войти</a>
+          <a href="/" class="popup__redirect" id="signup-redirect">Войти</a>
         </p>
       </div>
     </div>
-
     <!-- Попап пользователь зарегестрирован -->
     <div class="popup" id="popup-success">
       <div class="popup__content">
@@ -498,7 +421,10 @@
           Пользователь успешно зарегистрирован
         </h3>
 
-        <a href="" class="popup__redirect popup__redirect_success"
+        <a
+          href=""
+          class="popup__redirect popup__redirect_success"
+          id="success-redirect"
           >Выполнить вход</a
         >
       </div>

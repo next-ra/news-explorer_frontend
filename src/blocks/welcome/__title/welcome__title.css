@@ -1,4 +1,4 @@
-.articles__title {
+.welcome__title {
   font: normal 400 40px/46px Roboto-Slab, Arial, Helvetica;
 
   margin: 28px 0 0;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 1440px) {
-  .articles__title {
+  .welcome__title {
     margin: calc((100vw - 768px) / (1440 - 768) * (28 - 16) + 16px) 0 0;
 
     font-size: calc((100vw - 768px) / (1440 - 768) * (40 - 30) + 30px);
@@ -19,7 +19,7 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .articles__title {
+  .welcome__title {
     margin: 16px 0 0;
 
     max-width: calc((100vw - 768px) / (1440 - 768) * (500 - 400) + 400px);

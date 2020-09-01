@@ -1,5 +1,6 @@
 @import '_bg-grey/content-wrapper_bg-grey.css';
 @import '__bg-image/content-wrapper__bg-image.css';
+@import '_footer-bottom/content-wrapper_footer-bottom.css';
 
 .content-wrapper {
   display: grid;

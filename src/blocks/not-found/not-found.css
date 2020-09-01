@@ -3,7 +3,7 @@
 
 .not-found {
   grid-column: 2;
-  display: grid;
+  display: none;
   place-items: center;
   margin: 80px 0;
 }

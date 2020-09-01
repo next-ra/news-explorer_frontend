@@ -1,3 +1,5 @@
+@import "_active/button__auth-svg_active.css";
 .button__auth-svg {
   margin-left: 12px;
+  z-index: -1;
 }

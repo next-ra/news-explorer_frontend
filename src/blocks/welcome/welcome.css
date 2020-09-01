@@ -1,0 +1,9 @@
+@import '__undertitle/welcome__undertitle.css';
+@import '__title/welcome__title.css';
+@import '__key-words/welcome__key-words.css';
+
+.welcome {
+  font: normal 400 18px/24px Roboto, Arial, Helvetica;
+  color: #1a1b22;
+  grid-column: 2;
+}

@@ -11,6 +11,7 @@
 @import '__tooltip/card__tooltip.css';
 @import '__tooltip-text/card__tooltip-text.css';
 @import '__label-text/card__label-text.css';
+@import '__link/__link.css';
 
 .card {
   display: grid;

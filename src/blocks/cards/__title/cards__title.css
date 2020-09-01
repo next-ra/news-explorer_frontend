@@ -1,3 +1,4 @@
+@import '_inactive/cards__title_inactive.css';
 .cards__title {
   font: normal 400 40px/46px Roboto-Slab, Arial, Helvetica;
   color: #1a1b22;
