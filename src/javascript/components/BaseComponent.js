@@ -21,14 +21,14 @@ export default class BaseComponent {
     });
   }
 
-  _open(props) {
+  _show(props) {
     props.forEach((prop) => {
       const { element, className } = prop;
       element.classList.add(className);
     });
   }
 
-  _close(props) {
+  _hide(props) {
     props.forEach((prop) => {
       const { element, className } = prop;
       element.classList.remove(className);
@@ -39,6 +39,18 @@ export default class BaseComponent {
     props.forEach((prop) => {
       const { element, className } = prop;
       element.classList.toggle(className);
+    });
+  }
+
+  _disableInputs(form) {
+    [...form.elements].forEach((element) => {
+      element.setAttribute('disabled', true);
+    });
+  }
+
+  _activateInputs(form) {
+    [...form.elements].forEach((element) => {
+      element.removeAttribute('disabled');
     });
   }
 }

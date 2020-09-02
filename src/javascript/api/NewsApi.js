@@ -19,7 +19,6 @@ export default class ApiNews {
           return res.json();
         }
         return Promise.reject(res.status);
-      })
-      .catch((err) => console.log(err));
+      });
   }
 }

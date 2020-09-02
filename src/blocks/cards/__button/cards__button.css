@@ -1,4 +1,4 @@
-@import '_invisible/cards__button_invisible.css';
+@import '_active/cards__button_active.css';
 
 .cards__button {
   padding: 0;
@@ -10,6 +10,7 @@
 
   color: #1a1b22;
   background: #fff;
+  display: none;
 }
 
 @media screen and (max-width: 1440px) {
