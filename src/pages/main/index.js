@@ -1,7 +1,7 @@
 import './index.css';
 
-// import MainApi from '../../javascript/api/MainApi';
-// import MAIN_API_CONFIG from '../../javascript/constants/main-api-config';
+import MainApi from '../../javascript/api/MainApi';
+import MAIN_API_CONFIG from '../../javascript/constants/main-api-config';
 import NewsApi from '../../javascript/api/NewsApi';
 import NEW_API_CONFIG from '../../javascript/constants/news-api-config';
 import dates from '../../javascript/utils/format-date';
@@ -17,9 +17,12 @@ import Search from '../../javascript/components/Search';
 import SEARCH_CONFIG from '../../javascript/constants/search-config';
 import PopupReg from '../../javascript/components/PopupReg';
 import POPUP_REGISTRATION_CONFIG from '../../javascript/constants/PopupReg-config';
+import Validation from '../../javascript/components/Validation';
 
-const popupReg = new PopupReg(POPUP_REGISTRATION_CONFIG);
-// const mainApi = new MainApi(MAIN_API_CONFIG);
+const mainApi = new MainApi(MAIN_API_CONFIG);
+const validation = new Validation();
+const popupReg = new PopupReg(POPUP_REGISTRATION_CONFIG, mainApi, validation);
+
 const newsApi = new NewsApi(NEW_API_CONFIG, dates);
 const header = new Header(HEADER_CONFIG);
 const card = new Card(CARD_CONFIG);

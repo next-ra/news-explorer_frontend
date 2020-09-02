@@ -1,4 +1,8 @@
 export default class BaseComponent {
+  constructor() {
+    this.listeners = [];
+  }
+
   _addListener(props) {
     const { element, event, callback } = props;
     element.addEventListener(event, callback);

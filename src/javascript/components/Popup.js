@@ -1,18 +1,29 @@
 import BaseComponent from './BaseComponent';
 
 export default class Popup extends BaseComponent {
-  constructor(config, MainApi) {
+  constructor(config, MainApi, validation) {
     super();
     this.api = MainApi;
+    this.validation = validation;
     this.popup = config.popup;
     this.button = config.button;
     this.form = config.form;
     this.popupProps = config.popupProps;
+  }
+
+  addListeners() {
     this.listeners = [{
       element: this.form,
       event: 'submit',
-      callback: this.submit.bind(this),
-    }];
+      callback: (e) => this._submit(e),
+    },
+    {
+      element: this.form,
+      event: 'input',
+      callback: (e) => this.validation.formValidate(e, this.form),
+    },
+    ];
+    this._setListeners(this.listeners);
   }
 
   open() {
@@ -20,8 +31,9 @@ export default class Popup extends BaseComponent {
     this.form.reset();
     this._activateInputs(this.form);
     this._removeErrors();
+    this._clearInputsShadow();
     this.disableSubmitButton();
-    this._setListeners(this.listeners);
+    this.addListeners();
   }
 
   close() {
@@ -36,6 +48,14 @@ export default class Popup extends BaseComponent {
   _removeErrors() {
     this.form.querySelectorAll('.popup__error').forEach((e) => {
       e.textContent = '';
+    });
+  }
+
+  _clearInputsShadow() {
+    [...this.form.elements].forEach((e) => {
+      if (e.className === 'popup__input') {
+        e.setAttribute('style', 'box-shadow: none');
+      }
     });
   }
 }

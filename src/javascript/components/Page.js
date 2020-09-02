@@ -8,18 +8,6 @@ export default class Page extends BaseComponent {
     this.popupReg = props.popupReg;
     this.page = config.page;
     this.authButton = config.authButton;
-    this.listeners = [
-      {
-        element: this.authButton,
-        event: 'click',
-        callback: (e) => this._openPopup(e),
-      },
-      {
-        element: this.page,
-        event: 'click',
-        callback: (e) => this._closePopup(e),
-      },
-    ];
   }
 
   initialRender() {
@@ -37,20 +25,38 @@ export default class Page extends BaseComponent {
   _openPopup(e) {
     if (e.target.classList.contains('logged-out')) {
       this.popupReg.open();
+      this.remove();
     }
   }
 
   _closePopup(e) {
     if (
       e.target.classList.contains('popup')
-      || e.target.classList.contains('popup__close')
-      || e.key === 'Escape'
+        || e.target.classList.contains('popup__close')
+        || e.key === 'Escape'
     ) {
       this.popupReg.close();
     }
   }
 
   _addListeners() {
+    this.listeners = [{
+      element: this.authButton,
+      event: 'mousedown',
+      callback: (e) => this._openPopup(e),
+    },
+    {
+      element: this.page,
+      event: 'click',
+      callback: (e) => this._closePopup(e),
+    },
+    {
+      element: this.page,
+      event: 'keydown',
+      callback: (e) => this._closePopup(e),
+    },
+
+    ];
     this._setListeners(this.listeners);
   }
 }
