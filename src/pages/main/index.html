@@ -286,7 +286,7 @@
         </svg>
 
         <h3 class="popup__title">Вход</h3>
-        <form class="popup__form" novalidate>
+        <form class="popup__form" id="form-sign-in" novalidate>
           <label class="popup__label" for="sign-in-email">Email</label>
           <input
             class="popup__input"
@@ -312,7 +312,9 @@
           />
           <p class="popup__error" id="password-error">Минимум 8 знаков</p>
           <p class="popup__error" id="server-error">Ошибка сервера</p>
-          <button class="button popup__button" disabled>Войти</button>
+          <button class="button popup__button" id="button-sign-in" disabled>
+            Войти
+          </button>
         </form>
         <p class="popup__text">
           или
@@ -348,7 +350,7 @@
         </svg>
 
         <h3 class="popup__title">Регистрация</h3>
-        <form class="popup__form" novalidate>
+        <form class="popup__form" id="form-sign-up" novalidate>
           <label class="popup__label" for="sign-up-email">Email</label>
           <input
             oninput
@@ -387,7 +389,9 @@
           />
           <p class="popup__error" id="username-error"></p>
           <p class="popup__error" id="server-error">Ошибка сервера</p>
-          <button class="button popup__button">Зарегистрироваться</button>
+          <button class="button popup__button" id="button-sign-up">
+            Зарегистрироваться
+          </button>
         </form>
         <p class="popup__text">
           или

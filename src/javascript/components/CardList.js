@@ -15,7 +15,7 @@ export default class CardList extends BaseComponent {
     }];
   }
 
-  setListeners() {
+  _addListeners() {
     this._setListeners(this.listeners);
   }
 
@@ -38,9 +38,10 @@ export default class CardList extends BaseComponent {
   }
 
   renderArticles() {
-    this.section.style.display = 'block';
     const news = JSON.parse(sessionStorage.getItem('articles'));
     const showNews = news.splice(0, 3);
+
+    this.section.style.display = 'block';
     sessionStorage.setItem('articles', JSON.stringify(news));
     showNews.forEach((article) => {
       this._addCard(article);
@@ -48,7 +49,7 @@ export default class CardList extends BaseComponent {
 
     if (news.length !== 0) {
       this._show(this.buttonProps);
-      this.setListeners();
+      this._addListeners();
     } else {
       this._hide(this.buttonProps);
       this._removeListeners();

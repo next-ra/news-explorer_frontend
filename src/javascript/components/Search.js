@@ -18,7 +18,7 @@ export default class Search extends BaseComponent {
     }];
   }
 
-  setListeners() {
+  addListeners() {
     this._setListeners(this.listeners);
   }
 

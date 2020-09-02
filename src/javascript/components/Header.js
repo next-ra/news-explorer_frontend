@@ -31,6 +31,7 @@ export default class Header extends BaseComponent {
       // добавляем класс чтобы было удобней работать с попапами
       // так как они все открываются на одну кнопку
       this.authButton.classList.add('logged-out');
+      this.authButton.classList.remove('logged-in');
     } else {
       this.loggedIn(userName);
     }
@@ -49,7 +50,7 @@ export default class Header extends BaseComponent {
     this._toggle(this.menuProps);
   }
 
-  setListeners() {
+  addListeners() {
     this._setListeners(this.listeners);
   }
 
