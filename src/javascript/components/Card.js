@@ -3,7 +3,6 @@ import BaseComponent from './BaseComponent';
 export default class Card extends BaseComponent {
   constructor(config) {
     super();
-    this.config = config;
     this.template = config.template;
   }
 

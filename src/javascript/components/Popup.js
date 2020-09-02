@@ -1,10 +1,11 @@
 import BaseComponent from './BaseComponent';
 
 export default class Popup extends BaseComponent {
-  constructor(config, MainApi, validation) {
+  constructor(config, MainApi, validation, header) {
     super();
     this.api = MainApi;
     this.validation = validation;
+    this.header = header;
     this.popup = config.popup;
     this.button = config.button;
     this.form = config.form;
@@ -27,6 +28,7 @@ export default class Popup extends BaseComponent {
   }
 
   open() {
+    console.log('forma');
     this._show(this.popupProps);
     this.form.reset();
     this._activateInputs(this.form);

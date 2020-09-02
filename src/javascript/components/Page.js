@@ -6,12 +6,17 @@ export default class Page extends BaseComponent {
     this.header = props.header;
     this.search = props.search;
     this.popupReg = props.popupReg;
+    this.popupAuth = props.popupAuth;
     this.page = config.page;
     this.authButton = config.authButton;
+    this.regRedirect = config.regRedirect;
+    this.authRedirect = config.authRedirect;
   }
 
   initialRender() {
+    console.log('user');
     const user = sessionStorage.getItem('userName');
+    console.log(user);
     this._setInitialListeners();
     this._addListeners();
     this.header.render(user);
@@ -25,7 +30,6 @@ export default class Page extends BaseComponent {
   _openPopup(e) {
     if (e.target.classList.contains('logged-out')) {
       this.popupReg.open();
-      this.remove();
     }
   }
 
@@ -37,6 +41,18 @@ export default class Page extends BaseComponent {
     ) {
       this.popupReg.close();
     }
+  }
+
+  _redirectToAuth(e) {
+    e.preventDefault();
+    this.popupReg.close();
+    this.popupAuth.open();
+  }
+
+  _redirectToReg(e) {
+    e.preventDefault();
+    this.popupReg.open();
+    this.popupAuth.close();
   }
 
   _addListeners() {
@@ -54,6 +70,20 @@ export default class Page extends BaseComponent {
       element: this.page,
       event: 'keydown',
       callback: (e) => this._closePopup(e),
+    },
+    {
+      element: this.regRedirect,
+      event: 'click',
+      callback: ((e) => {
+        this._redirectToAuth(e);
+      }),
+    },
+    {
+      element: this.authRedirect,
+      event: 'click',
+      callback: ((e) => {
+        this._redirectToReg(e);
+      }),
     },
 
     ];

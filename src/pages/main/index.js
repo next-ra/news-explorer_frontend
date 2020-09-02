@@ -17,20 +17,21 @@ import Search from '../../javascript/components/Search';
 import SEARCH_CONFIG from '../../javascript/constants/search-config';
 import PopupReg from '../../javascript/components/PopupReg';
 import POPUP_REGISTRATION_CONFIG from '../../javascript/constants/PopupReg-config';
+import PopupAuth from '../../javascript/components/PopupAuth';
+import POPUP_AUTHENTICATION_CONFIG from '../../javascript/constants/PopupAuth-config';
 import Validation from '../../javascript/components/Validation';
 
+const header = new Header(HEADER_CONFIG);
 const mainApi = new MainApi(MAIN_API_CONFIG);
 const validation = new Validation();
 const popupReg = new PopupReg(POPUP_REGISTRATION_CONFIG, mainApi, validation);
-
+const popupAuth = new PopupAuth(POPUP_AUTHENTICATION_CONFIG, mainApi, validation, header);
 const newsApi = new NewsApi(NEW_API_CONFIG, dates);
-const header = new Header(HEADER_CONFIG);
 const card = new Card(CARD_CONFIG);
 const cardList = new CardList(CARDLIST_CONFIG, card);
 const search = new Search(SEARCH_CONFIG, newsApi, cardList);
 const page = new Page(PAGE_CONFIG, {
-  header, search, popupReg,
+  header, search, popupReg, popupAuth,
 });
-sessionStorage.setItem('userName', 'John');
 
 page.initialRender();
