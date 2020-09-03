@@ -1,11 +1,12 @@
 import BaseComponent from './BaseComponent';
 
 export default class Popup extends BaseComponent {
-  constructor(config, MainApi, validation, header) {
+  constructor(config, MainApi, validation, header, search) {
     super();
     this.api = MainApi;
     this.validation = validation;
     this.header = header;
+    this.search = search;
     this.popup = config.popup;
     this.button = config.button;
     this.form = config.form;

@@ -14,7 +14,8 @@ export default class PopupSignIn extends Popup {
               sessionStorage.setItem('userName', data.data.name);
 
               this.header.render(sessionStorage.getItem('userName'));
-
+              // рендерим последний поиск, если пользователь решил войти, чтобы сохранить статью
+              this.search._search(e);
               this.close();
             });
         } else throw new Error(res.message);

@@ -6,24 +6,12 @@ export default class CardList extends BaseComponent {
     this.container = config.container;
     this.section = config.section;
     this.card = card;
-    this.button = config.button;
     this.buttonProps = config.buttonProps;
-  }
-
-  _addListeners() {
-    this.listeners = [{
-      element: this.button,
-      event: 'click',
-      callback: (e) => this.renderArticles(e),
-    }];
-    this._setListeners(this.listeners);
-  }
-
-  _removeListeners() {
-    this._unsetListeners(this.listeners);
+    this.defaultImage = config.defaultImage;
   }
 
   _dateFormat(date) {
+    // добавить запятую перед годом
     return new Date(date).toLocaleString('ru', {
       day: 'numeric',
       month: 'long',
@@ -43,7 +31,7 @@ export default class CardList extends BaseComponent {
       });
     }
 
-    clone.querySelector('.card__image').src = article.urlToImage;
+    clone.querySelector('.card__image').src = article.urlToImage || this.defaultImage;
     clone.querySelector('.card__source').textContent = article.source.name;
     clone.querySelector('.card__title').textContent = article.title;
     clone.querySelector('.card__text').textContent = article.description;
@@ -54,10 +42,11 @@ export default class CardList extends BaseComponent {
     this.container.appendChild(clone);
   }
 
-  renderArticles() {
+  _renderArticles() {
     const news = JSON.parse(sessionStorage.getItem('articles'));
+    console.log(news);
     const showNews = news.splice(0, 3);
-
+    console.log(showNews);
     this.section.style.display = 'block';
     sessionStorage.setItem('articles', JSON.stringify(news));
     showNews.forEach((article) => {
@@ -66,10 +55,8 @@ export default class CardList extends BaseComponent {
 
     if (news.length !== 0) {
       this._show(this.buttonProps);
-      this._addListeners();
     } else {
       this._hide(this.buttonProps);
-      this._removeListeners();
     }
   }
 }

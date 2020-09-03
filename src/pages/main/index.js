@@ -29,13 +29,14 @@ const mainApi = new MainApi(MAIN_API_CONFIG);
 const header = new Header(HEADER_CONFIG, mainApi);
 const popupSuccess = new PopupSuccess(POPUP_SUCCESS_CONFIG);
 const popupSignUp = new PopupSignUp(POPUP_SIGN_UP_CONFIG, mainApi, validation, popupSuccess);
-const popupSignIn = new PopupSignIn(POPUP_SIGN_IN_CONFIG, mainApi, validation, header);
+
 const newsApi = new NewsApi(NEW_API_CONFIG, dates);
 const card = new Card(CARD_CONFIG, mainApi);
 const cardList = new CardList(CARDLIST_CONFIG, card);
-const search = new Search(SEARCH_CONFIG, newsApi, cardList);
+const search = new Search(SEARCH_CONFIG, newsApi, cardList, validation);
+const popupSignIn = new PopupSignIn(POPUP_SIGN_IN_CONFIG, mainApi, validation, header, search);
 const page = new Page(PAGE_CONFIG, {
-  header, search, popupSignUp, popupSignIn, popupSuccess,
+  header, search, popupSignUp, popupSignIn, popupSuccess, cardList,
 });
 
 page.initialRender();

@@ -4,5 +4,6 @@ const PAGE_CONFIG = {
   regRedirect: document.querySelector('#signup-redirect'),
   authRedirect: document.querySelector('#signin-redirect'),
   successRedirect: document.querySelector('#success-redirect'),
+  showMoreButton: document.querySelector('.cards__button'),
 };
 export default PAGE_CONFIG;

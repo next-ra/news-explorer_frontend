@@ -1,9 +1,9 @@
 .search__error {
   font: normal 400 12px Inter, Arial, Helvetica;
-  text-shadow: 1px 1px red;
+
   margin: 0;
   position: absolute;
-  color: rgb(240, 240, 240);
+  color: #f0d7d7;
   top: -25px;
   padding: 3px;
 }

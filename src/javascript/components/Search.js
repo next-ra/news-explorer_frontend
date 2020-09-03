@@ -1,7 +1,7 @@
 import BaseComponent from './BaseComponent';
 
 export default class Search extends BaseComponent {
-  constructor(config, NewsApi, cardList) {
+  constructor(config, NewsApi, cardList, validation) {
     super();
     this.preloaderProps = config.preloaderProps;
     this.notFoundProps = config.notFoundProps;
@@ -11,6 +11,7 @@ export default class Search extends BaseComponent {
     this.input = config.input;
     this.api = NewsApi;
     this.cardList = cardList;
+    this.validation = validation;
   }
 
   addListeners() {
@@ -18,7 +19,13 @@ export default class Search extends BaseComponent {
       element: this.form,
       event: 'submit',
       callback: (e) => this._search(e),
-    }];
+    },
+    {
+      element: this.form,
+      event: 'input',
+      callback: (e) => this.validation.formValidate(e, this.form),
+    },
+    ];
     this._setListeners(this.listeners);
   }
 
@@ -30,14 +37,14 @@ export default class Search extends BaseComponent {
     sessionStorage.removeItem('articles');
     this._disableInputs(this.form);
     this._toggle(this.preloaderProps);
-
     this.api
       .getArticles(this.input.value)
       .then((res) => {
         sessionStorage.setItem('articles', JSON.stringify(res.articles));
+        sessionStorage.setItem('lastSearch', JSON.stringify(res.articles));
         sessionStorage.setItem('keyWord', this.input.value);
         res.articles.length > 0
-          ? this.cardList.renderArticles()
+          ? this.cardList._renderArticles()
           : this._show(this.notFoundProps);
       })
       .catch((err) => {
@@ -45,6 +52,7 @@ export default class Search extends BaseComponent {
       })
       .finally(() => {
         this._activateInputs(this.form);
+
         this._toggle(this.preloaderProps);
       });
   }

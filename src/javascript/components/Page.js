@@ -8,11 +8,13 @@ export default class Page extends BaseComponent {
     this.popupSignUp = props.popupSignUp;
     this.popupSignIn = props.popupSignIn;
     this.popupSuccess = props.popupSuccess;
+    this.cardList = props.cardList;
     this.page = config.page;
     this.authButton = config.authButton;
     this.regRedirect = config.regRedirect;
     this.authRedirect = config.authRedirect;
     this.successRedirect = config.successRedirect;
+    this.showMoreButton = config.showMoreButton;
   }
 
   initialRender() {
@@ -89,7 +91,13 @@ export default class Page extends BaseComponent {
         this._redirectToAuth(e);
       }),
     },
-
+    {
+      element: this.showMoreButton,
+      event: 'click',
+      callback: ((e) => {
+        this.cardList._renderArticles(e);
+      }),
+    },
     ];
     this._setListeners(this.listeners);
   }
