@@ -1,6 +1,6 @@
 const popup = document.querySelector('#popup-sign-up');
 
-const POPUP_REGISTRATION_CONFIG = {
+const POPUP_SIGN_UP_CONFIG = {
   popup,
   form: document.querySelector('#form-sign-up'),
   button: document.querySelector('#button-sign-up'),
@@ -9,4 +9,4 @@ const POPUP_REGISTRATION_CONFIG = {
     className: ('popup_active'),
   }],
 };
-export default POPUP_REGISTRATION_CONFIG;
+export default POPUP_SIGN_UP_CONFIG;

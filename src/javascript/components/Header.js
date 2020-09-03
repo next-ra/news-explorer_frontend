@@ -1,20 +1,23 @@
 import BaseComponent from './BaseComponent';
 
 export default class Header extends BaseComponent {
-  constructor(config) {
+  constructor(config, mainApi) {
     super();
+    this.api = mainApi;
     this.config = config;
     this.authButton = config.authButton;
     this.menuIcon = config.menuIcon;
     this.articlesLink = config.articlesLink;
     this.svg = config.svg;
     this.menuProps = config.menuProps;
+  }
 
+  addListeners() {
     this.listeners = [
       {
         element: this.menuIcon,
         event: 'click',
-        callback: (e) => this.toggleMenu(e),
+        callback: (e) => this._toggleMenu(e),
       },
       {
         element: this.authButton,
@@ -22,6 +25,7 @@ export default class Header extends BaseComponent {
         callback: (e) => this.signOut(e),
       },
     ];
+    this._setListeners(this.listeners);
   }
 
   render(userName) {
@@ -50,14 +54,15 @@ export default class Header extends BaseComponent {
     this._toggle(this.menuProps);
   }
 
-  addListeners() {
-    this._setListeners(this.listeners);
-  }
-
   signOut(e) {
     if (e.target.classList.contains('logged-in')
      || e.target.classList.contains('button__auth-svg')) {
-      this.render();
+      this.api.signOut()
+        .then((res) => {
+          console.log(res);
+          sessionStorage.removeItem('userName');
+          document.location.href = '../';
+        });
     }
   }
 }

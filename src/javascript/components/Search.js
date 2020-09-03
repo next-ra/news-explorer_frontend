@@ -11,14 +11,14 @@ export default class Search extends BaseComponent {
     this.input = config.input;
     this.api = NewsApi;
     this.cardList = cardList;
+  }
+
+  addListeners() {
     this.listeners = [{
       element: this.form,
       event: 'submit',
       callback: (e) => this._search(e),
     }];
-  }
-
-  addListeners() {
     this._setListeners(this.listeners);
   }
 

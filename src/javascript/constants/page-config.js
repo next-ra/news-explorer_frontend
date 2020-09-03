@@ -3,5 +3,6 @@ const PAGE_CONFIG = {
   page: document.querySelector('.page'),
   regRedirect: document.querySelector('#signup-redirect'),
   authRedirect: document.querySelector('#signin-redirect'),
+  successRedirect: document.querySelector('#success-redirect'),
 };
 export default PAGE_CONFIG;

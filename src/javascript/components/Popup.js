@@ -42,6 +42,16 @@ export default class Popup extends BaseComponent {
     this._unsetListeners(this.listeners);
   }
 
+  _closeOnEvent(e) {
+    if (
+      e.target.classList.contains('popup')
+      || e.target.classList.contains('popup__close')
+      || e.key === 'Escape'
+    ) {
+      this.close();
+    }
+  }
+
   disableSubmitButton() {
     this.button.setAttribute('disabled', true);
   }

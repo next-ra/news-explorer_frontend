@@ -5,17 +5,19 @@ export default class Page extends BaseComponent {
     super();
     this.header = props.header;
     this.search = props.search;
-    this.popupReg = props.popupReg;
-    this.popupAuth = props.popupAuth;
+    this.popupSignUp = props.popupSignUp;
+    this.popupSignIn = props.popupSignIn;
+    this.popupSuccess = props.popupSuccess;
     this.page = config.page;
     this.authButton = config.authButton;
     this.regRedirect = config.regRedirect;
     this.authRedirect = config.authRedirect;
+    this.successRedirect = config.successRedirect;
   }
 
   initialRender() {
     const user = sessionStorage.getItem('userName');
-    console.log(user);
+    console.log('user =', user);
     this._setInitialListeners();
     this._addListeners();
     this.header.render(user);
@@ -28,30 +30,27 @@ export default class Page extends BaseComponent {
 
   _openPopup(e) {
     if (e.target.classList.contains('logged-out')) {
-      this.popupAuth.open();
+      this.popupSignIn.open();
     }
   }
 
   _closePopup(e) {
-    if (
-      e.target.classList.contains('popup')
-        || e.target.classList.contains('popup__close')
-        || e.key === 'Escape'
-    ) {
-      this.popupReg.close();
-    }
+    this.popupSignIn._closeOnEvent(e);
+    this.popupSignUp._closeOnEvent(e);
+    this.popupSuccess._closeOnEvent(e);
   }
 
   _redirectToAuth(e) {
     e.preventDefault();
-    this.popupReg.close();
-    this.popupAuth.open();
+    this.popupSignUp.close();
+    this.popupSuccess.close();
+    this.popupSignIn.open();
   }
 
   _redirectToReg(e) {
     e.preventDefault();
-    this.popupReg.open();
-    this.popupAuth.close();
+    this.popupSignUp.open();
+    this.popupSignIn.close();
   }
 
   _addListeners() {
@@ -82,6 +81,12 @@ export default class Page extends BaseComponent {
       event: 'click',
       callback: ((e) => {
         this._redirectToReg(e);
+      }),
+    }, {
+      element: this.successRedirect,
+      event: 'click',
+      callback: ((e) => {
+        this._redirectToAuth(e);
       }),
     },
 

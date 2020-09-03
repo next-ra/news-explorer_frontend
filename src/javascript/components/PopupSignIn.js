@@ -1,6 +1,6 @@
 import Popup from './Popup';
 
-export default class PopupAuth extends Popup {
+export default class PopupSignIn extends Popup {
   _submit(e) {
     e.preventDefault();
     const { email, password } = this.form.elements;

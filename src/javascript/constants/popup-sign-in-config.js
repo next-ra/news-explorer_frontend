@@ -1,6 +1,6 @@
 const popup = document.querySelector('#popup-sign-in');
 
-const POPUP_AUTHENTICATION_CONFIG = {
+const POPUP_SIGN_IN_CONFIG = {
   popup,
   form: document.querySelector('#form-sign-in'),
   button: document.querySelector('#button-sign-in'),
@@ -9,4 +9,4 @@ const POPUP_AUTHENTICATION_CONFIG = {
     className: ('popup_active'),
   }],
 };
-export default POPUP_AUTHENTICATION_CONFIG;
+export default POPUP_SIGN_IN_CONFIG;
