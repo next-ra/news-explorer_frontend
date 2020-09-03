@@ -8,19 +8,27 @@ export default class CardList extends BaseComponent {
     this.card = card;
     this.button = config.button;
     this.buttonProps = config.buttonProps;
+  }
+
+  _addListeners() {
     this.listeners = [{
       element: this.button,
       event: 'click',
       callback: (e) => this.renderArticles(e),
     }];
-  }
-
-  _addListeners() {
     this._setListeners(this.listeners);
   }
 
   _removeListeners() {
     this._unsetListeners(this.listeners);
+  }
+
+  _dateFormat(date) {
+    return new Date(date).toLocaleString('ru', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).slice(0, -2);
   }
 
   _addCard(article) {
@@ -30,7 +38,7 @@ export default class CardList extends BaseComponent {
     clone.querySelector('.card__source').textContent = article.source.name;
     clone.querySelector('.card__title').textContent = article.title;
     clone.querySelector('.card__text').textContent = article.description;
-    clone.querySelector('.card__date').textContent = article.date;
+    clone.querySelector('.card__date').textContent = this._dateFormat(article.publishedAt);
     clone.querySelector('.card__link').href = article.url;
     clone.querySelector('.card').id = article._id || 'not-saved';
 

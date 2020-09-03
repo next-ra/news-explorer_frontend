@@ -14,7 +14,6 @@ export default class Page extends BaseComponent {
   }
 
   initialRender() {
-    console.log('user');
     const user = sessionStorage.getItem('userName');
     console.log(user);
     this._setInitialListeners();

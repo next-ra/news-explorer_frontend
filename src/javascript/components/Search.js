@@ -30,7 +30,7 @@ export default class Search extends BaseComponent {
     sessionStorage.clear('articles');
     this._disableInputs(this.form);
     this._toggle(this.preloaderProps);
-    console.log(this.api);
+
     this.api
       .getArticles(this.input.value)
       .then((res) => {

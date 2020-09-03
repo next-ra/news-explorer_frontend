@@ -13,7 +13,7 @@ const SEARCH_CONFIG = {
 
   notFoundProps: [{
     element: document.querySelector('.not-found'),
-    class: 'not-found_active',
+    className: 'not-found_active',
   }],
 };
 export default SEARCH_CONFIG;

@@ -28,7 +28,6 @@ export default class Popup extends BaseComponent {
   }
 
   open() {
-    console.log('forma');
     this._show(this.popupProps);
     this.form.reset();
     this._activateInputs(this.form);
