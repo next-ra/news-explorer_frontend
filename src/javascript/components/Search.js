@@ -27,7 +27,7 @@ export default class Search extends BaseComponent {
     this._hide(this.notFoundProps);
     this._clearContainer();
     this.cardsSection.style.display = 'none';
-    sessionStorage.clear('articles');
+    sessionStorage.removeItem('articles');
     this._disableInputs(this.form);
     this._toggle(this.preloaderProps);
 

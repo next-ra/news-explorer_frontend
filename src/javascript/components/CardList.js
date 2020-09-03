@@ -33,6 +33,15 @@ export default class CardList extends BaseComponent {
 
   _addCard(article) {
     const clone = this.card.create();
+    const user = sessionStorage.getItem('userName');
+    if (user) {
+      clone.querySelector('.card__tooltip-text').textContent = 'Сохранить статью';
+      this._addListener({
+        element: clone.querySelector('.card__bookmark'),
+        event: 'click',
+        callback: (e) => this.card.saveCard(e),
+      });
+    }
 
     clone.querySelector('.card__image').src = article.urlToImage;
     clone.querySelector('.card__source').textContent = article.source.name;

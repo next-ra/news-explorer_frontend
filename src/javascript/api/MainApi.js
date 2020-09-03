@@ -15,7 +15,12 @@ export default class MainApi {
         email,
         password,
       }),
-    }).then((res) => res.json());
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(res.status);
+    });
   }
 
   signIn(email, password) {
@@ -27,21 +32,36 @@ export default class MainApi {
         email,
         password,
       }),
-    }).then((res) => res.json());
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(res.status);
+    });
   }
 
   signOut() {
     return fetch(`${this.url}/out`, {
       method: 'POST',
       credentials: 'include',
-    }).then((res) => res.json());
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(res.status);
+    });
   }
 
   getUser() {
     return fetch(`${this.url}/users/me`, {
       method: 'GET',
       credentials: 'include',
-    }).then((res) => res.json());
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(res.status);
+    });
   }
 
   createArticle(cardInfo) {
@@ -50,7 +70,12 @@ export default class MainApi {
       credentials: 'include',
       headers: this.headers,
       body: JSON.stringify(cardInfo),
-    }).then((res) => res.json());
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(res.status);
+    });
   }
 
   getUsersArticles() {
@@ -66,7 +91,11 @@ export default class MainApi {
       credentials: 'include',
       header: this.header,
     })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(res.status);
+      });
   }
 }

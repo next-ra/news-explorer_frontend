@@ -9,7 +9,7 @@ export default class ApiNews {
   }
 
   getArticles(keyWord) {
-    sessionStorage.clear('articles');
+    sessionStorage.removeItem('articles');
 
     return fetch(
       `${this.url}${this.endpoint}?q=${keyWord}&from=${this.dates.from}&to=${this.dates.to}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`,

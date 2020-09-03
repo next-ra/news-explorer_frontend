@@ -28,7 +28,7 @@ export default class Page extends BaseComponent {
 
   _openPopup(e) {
     if (e.target.classList.contains('logged-out')) {
-      this.popupReg.open();
+      this.popupAuth.open();
     }
   }
 
