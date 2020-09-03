@@ -5,7 +5,7 @@ import MAIN_API_CONFIG from '../../javascript/constants/main-api-config';
 import NewsApi from '../../javascript/api/NewsApi';
 import NEW_API_CONFIG from '../../javascript/constants/news-api-config';
 import dates from '../../javascript/utils/format-date';
-import Page from '../../javascript/components/Page';
+import MainPage from '../../javascript/components/MainPage';
 import PAGE_CONFIG from '../../javascript/constants/page-config';
 import Header from '../../javascript/components/Header';
 import HEADER_CONFIG from '../../javascript/constants/header-config';
@@ -35,8 +35,8 @@ const card = new Card(CARD_CONFIG, mainApi);
 const cardList = new CardList(CARDLIST_CONFIG, card);
 const search = new Search(SEARCH_CONFIG, newsApi, cardList, validation);
 const popupSignIn = new PopupSignIn(POPUP_SIGN_IN_CONFIG, mainApi, validation, header, search);
-const page = new Page(PAGE_CONFIG, {
+const mainPage = new MainPage(PAGE_CONFIG, {
   header, search, popupSignUp, popupSignIn, popupSuccess, cardList,
 });
 
-page.initialRender();
+mainPage.initialRender();

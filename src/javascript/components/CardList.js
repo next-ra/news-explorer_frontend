@@ -24,19 +24,21 @@ export default class CardList extends BaseComponent {
     const user = sessionStorage.getItem('userName');
     if (user) {
       clone.querySelector('.card__tooltip-text').textContent = 'Сохранить статью';
+
       this._addListener({
         element: clone.querySelector('.card__bookmark'),
         event: 'click',
         callback: (e) => this.card.saveCard(e),
       });
     }
-
-    clone.querySelector('.card__image').src = article.urlToImage || this.defaultImage;
-    clone.querySelector('.card__source').textContent = article.source.name;
+    if (clone.querySelector('.card__label-text')
+    ) { clone.querySelector('.card__label-text').textContent = article.keyword; }
+    clone.querySelector('.card__image').src = article.urlToImage || article.image || this.defaultImage;
+    clone.querySelector('.card__source').textContent = article.source.name || article.source;
     clone.querySelector('.card__title').textContent = article.title;
-    clone.querySelector('.card__text').textContent = article.description;
-    clone.querySelector('.card__date').textContent = this._dateFormat(article.publishedAt);
-    clone.querySelector('.card__link').href = article.url;
+    clone.querySelector('.card__text').textContent = article.description || article.text;
+    clone.querySelector('.card__date').textContent = article.date || this._dateFormat(article.publishedAt);
+    clone.querySelector('.card__link').href = article.url || article.link;
     clone.querySelector('.card').id = article._id || 'not-saved';
 
     this.container.appendChild(clone);
@@ -44,9 +46,7 @@ export default class CardList extends BaseComponent {
 
   _renderArticles() {
     const news = JSON.parse(sessionStorage.getItem('articles'));
-    console.log(news);
     const showNews = news.splice(0, 3);
-    console.log(showNews);
     this.section.style.display = 'block';
     sessionStorage.setItem('articles', JSON.stringify(news));
     showNews.forEach((article) => {

@@ -1,6 +1,6 @@
 import BaseComponent from './BaseComponent';
 
-export default class Page extends BaseComponent {
+export default class MainPage extends BaseComponent {
   constructor(config, props) {
     super();
     this.header = props.header;

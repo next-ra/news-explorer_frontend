@@ -33,28 +33,32 @@ export default class Search extends BaseComponent {
     e.preventDefault();
     this._hide(this.notFoundProps);
     this._clearContainer();
-    this.cardsSection.style.display = 'none';
-    sessionStorage.removeItem('articles');
-    this._disableInputs(this.form);
-    this._toggle(this.preloaderProps);
-    this.api
-      .getArticles(this.input.value)
-      .then((res) => {
-        sessionStorage.setItem('articles', JSON.stringify(res.articles));
-        sessionStorage.setItem('lastSearch', JSON.stringify(res.articles));
-        sessionStorage.setItem('keyWord', this.input.value);
-        res.articles.length > 0
-          ? this.cardList._renderArticles()
-          : this._show(this.notFoundProps);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        this._activateInputs(this.form);
-
-        this._toggle(this.preloaderProps);
-      });
+    //  проверка  нужна для того чтобы вошедший пользователь не начинал автоматически поиск,
+    //  если же он когда был не залогинен, что-то искал,
+    //  а потом решил войти, чтобы сохранить найденные статьи, отобразится его последний поиск
+    //  с уже активными кнопками
+    if (this.input.value.length >= 2) {
+      this.cardsSection.style.display = 'none';
+      sessionStorage.removeItem('articles');
+      this._disableInputs(this.form);
+      this._toggle(this.preloaderProps);
+      this.api
+        .getArticles(this.input.value)
+        .then((res) => {
+          sessionStorage.setItem('articles', JSON.stringify(res.articles));
+          sessionStorage.setItem('keyWord', this.input.value);
+          res.articles.length > 0
+            ? this.cardList._renderArticles()
+            : this._show(this.notFoundProps);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          this._activateInputs(this.form);
+          this._toggle(this.preloaderProps);
+        });
+    }
   }
 
   _clearContainer() {

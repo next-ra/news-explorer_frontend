@@ -1,17 +1,25 @@
-@import "../../vendor/fonts.css";
-@import "../../blocks/page/page.css";
-@import "../../blocks/content-wrapper/content-wrapper.css";
-@import "../../blocks/header/header.css";
-@import "../../blocks/menu-icon/menu-icon.css";
-@import "../../blocks/nav-box/nav-box.css";
-@import "../../blocks/search/search.css";
-@import "../../blocks/search-form/search-form.css";
-@import "../../blocks/button/button.css";
-@import "../../blocks/preloader/preloader.css";
-@import "../../blocks/not-found/not-found.css";
-@import "../../blocks/cards/cards.css";
-@import "../../blocks/card/card.css";
-@import "../../blocks/about/about.css";
-@import "../../blocks/footer/footer.css";
-@import "../../blocks/popup/popup.css";
-@import "../../blocks/search/__error/search__error.css";
+@import '../../vendor/fonts.css';
+@import '../../blocks/page/page.css';
+@import '../../blocks/content-wrapper/content-wrapper.css';
+@import '../../blocks/header/header.css';
+@import '../../blocks/menu-icon/menu-icon.css';
+@import '../../blocks/nav-box/nav-box.css';
+@import '../../blocks/search/search.css';
+@import '../../blocks/search-form/search-form.css';
+@import '../../blocks/button/button.css';
+@import '../../blocks/preloader/preloader.css';
+@import '../../blocks/not-found/not-found.css';
+@import '../../blocks/cards/cards.css';
+@import '../../blocks/card/card.css';
+@import '../../blocks/about/about.css';
+@import '../../blocks/footer/footer.css';
+@import '../../blocks/popup/popup.css';
+@import '../../blocks/search/__error/search__error.css';
+
+/* .search-form__input_clear-icon {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  top: 20px;
+  right: 35%;
+} */
