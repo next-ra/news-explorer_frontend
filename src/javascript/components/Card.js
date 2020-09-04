@@ -14,7 +14,7 @@ export default class Card extends BaseComponent {
 
   saveOrDelete(event) {
     this.article = event.target.closest('.card');
-
+    const user = sessionStorage.getItem('userName');
     const cardInfo = {
       keyword: sessionStorage.getItem('keyWord'),
       title: this.article.querySelector('.card__title').textContent,
@@ -25,7 +25,7 @@ export default class Card extends BaseComponent {
       image: this.article.querySelector('.card__image').src,
     };
 
-    if (this.article.id === 'not-saved') {
+    if (user && this.article.id === 'not-saved') {
       this.api.createArticle(cardInfo)
         .then((res) => {
           console.log(res);
@@ -35,9 +35,9 @@ export default class Card extends BaseComponent {
         })
         .catch((err) => console.log(err));
       // у карточки есть иконка корзины - удаляем из базы и из разметки
-    } else if (this.article.querySelector('.card__trash-path')) {
+    } else if (user && this.article.querySelector('.card__trash-path')) {
       this.deleteCard();
-    } else this.removeFromSaved();
+    } else if (user) this.removeFromSaved();
   }
 
   // Метод удаляет метку на карточке на главной странице

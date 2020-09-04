@@ -17,7 +17,6 @@ export default class PopupSignIn extends Popup {
         throw new Error(res.message);
       })
       .then((data) => {
-        console.log(data);
         sessionStorage.setItem('userName', data.data.name);
 
         this.header.render(sessionStorage.getItem('userName'));
@@ -26,7 +25,6 @@ export default class PopupSignIn extends Popup {
         this.close();
       })
       .catch((err) => {
-        // console.log(err);
         this.form.querySelector('#server-error').textContent = err.message;
       })
       .finally(() => {
