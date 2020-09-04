@@ -1,20 +1,23 @@
-# News-Explorer 
+# News-Explorer
 
 ## Что это?
+
 Дипломная работа студента Яндекс-практикум, курс веб-разработки.
+
 ##
-`News-explorer` - быстрый поисковик новостей по ключевому слову. 
+
+`News-explorer` - быстрый поисковик новостей по ключевому слову.
 Cтатьи можно сохранять себе в личный кабинет.
 
-## [демо](https://next-ra.github.io/news-explorer_level2/)
+## [https://news-explorer.tk/](https://news-explorer.tk/)
 
 ## Технологии
 
-* Webpack
-* JavaScript
-* HTML
-* CSS
-* БЭМ
+- Webpack
+- JavaScript
+- HTML
+- CSS
+- БЭМ
 
 ## Установка
 
@@ -31,6 +34,7 @@ npm i
 ```
 
 ## Команды для работы
+
 |                |                               |
 | :------------- | :---------------------------- |
 | npm run dev    | Запуск сервера на localhost   |
