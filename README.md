@@ -1,6 +1,20 @@
-# news-explorer (level-2) 
+# News-Explorer 
 
-## [Демо](https://next-ra.github.io/news-explorer_level2/)
+## Что это?
+Дипломная работа студента Яндекс-практикум, курс веб-разработки.
+##
+`News-explorer` - быстрый поисковик новостей по ключевому слову. 
+Cтатьи можно сохранять себе в личный кабинет.
+
+## [демо](https://next-ra.github.io/news-explorer_level2/)
+
+## Технологии
+
+* Webpack
+* JavaScript
+* HTML
+* CSS
+* БЭМ
 
 ## Установка
 
