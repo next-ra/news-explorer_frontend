@@ -5,6 +5,7 @@ export default class Search extends BaseComponent {
     super();
     this.preloaderProps = config.preloaderProps;
     this.notFoundProps = config.notFoundProps;
+    this.notFoundText = config.notFoundText;
     this.cardsSection = config.cardsSection;
     this.container = config.container;
     this.form = config.form;
@@ -52,6 +53,8 @@ export default class Search extends BaseComponent {
             : this._show(this.notFoundProps);
         })
         .catch((err) => {
+          this._show(this.notFoundProps);
+          this.notFoundText.textContent = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз';
           console.log(err);
         })
         .finally(() => {

@@ -1,5 +1,5 @@
 const MAIN_API_CONFIG = {
-  url: 'http://localhost:3000',
+  url: 'https://api.news-explorer.tk',
   headers: {
     'Content-Type': 'application/json',
   },

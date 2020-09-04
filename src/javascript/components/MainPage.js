@@ -56,53 +56,55 @@ export default class MainPage extends BaseComponent {
   }
 
   _addListeners() {
-    this.listeners = [{
-      element: this.page,
-      event: 'click',
-      callback: (e) => this.cardList.deleteCard(e),
-    },
-    {
-      element: this.authButton,
-      event: 'mousedown',
-      callback: (e) => this._openPopup(e),
-    },
-    {
-      element: this.page,
-      event: 'click',
-      callback: (e) => this._closePopup(e),
-    },
-    {
-      element: this.page,
-      event: 'keydown',
-      callback: (e) => this._closePopup(e),
-    },
-    {
-      element: this.regRedirect,
-      event: 'click',
-      callback: ((e) => {
-        this._redirectToAuth(e);
-      }),
-    },
-    {
-      element: this.authRedirect,
-      event: 'click',
-      callback: ((e) => {
-        this._redirectToReg(e);
-      }),
-    }, {
-      element: this.successRedirect,
-      event: 'click',
-      callback: ((e) => {
-        this._redirectToAuth(e);
-      }),
-    },
-    {
-      element: this.showMoreButton,
-      event: 'click',
-      callback: ((e) => {
-        this.cardList._renderArticles(e);
-      }),
-    },
+    this.listeners = [
+      {
+        element: this.page,
+        event: 'click',
+        callback: (e) => this.cardList.deleteCard(e),
+      },
+      {
+        element: this.authButton,
+        event: 'mousedown',
+        callback: (e) => this._openPopup(e),
+      },
+      {
+        element: this.page,
+        event: 'click',
+        callback: (e) => this._closePopup(e),
+      },
+      {
+        element: this.page,
+        event: 'keydown',
+        callback: (e) => this._closePopup(e),
+      },
+      {
+        element: this.regRedirect,
+        event: 'click',
+        callback: (e) => {
+          this._redirectToAuth(e);
+        },
+      },
+      {
+        element: this.authRedirect,
+        event: 'click',
+        callback: (e) => {
+          this._redirectToReg(e);
+        },
+      },
+      {
+        element: this.successRedirect,
+        event: 'click',
+        callback: (e) => {
+          this._redirectToAuth(e);
+        },
+      },
+      {
+        element: this.showMoreButton,
+        event: 'click',
+        callback: (e) => {
+          this.cardList._renderArticles(e);
+        },
+      },
     ];
     this._setListeners(this.listeners);
   }

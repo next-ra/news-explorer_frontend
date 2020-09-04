@@ -15,12 +15,7 @@ export default class MainApi {
         email,
         password,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(res.status);
-    });
+    }).then((res) => res.json());
   }
 
   signIn(email, password) {
@@ -32,12 +27,7 @@ export default class MainApi {
         email,
         password,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(res.status);
-    });
+    }).then((res) => res.json());
   }
 
   signOut() {
@@ -56,12 +46,7 @@ export default class MainApi {
     return fetch(`${this.url}/users/me`, {
       method: 'GET',
       credentials: 'include',
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(res.status);
-    });
+    }).then((res) => res.json());
   }
 
   createArticle(cardInfo) {
@@ -90,12 +75,11 @@ export default class MainApi {
       method: 'DELETE',
       credentials: 'include',
       header: this.header,
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res.status);
-      });
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(res.status);
+    });
   }
 }

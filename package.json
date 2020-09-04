@@ -1,7 +1,7 @@
 {
-  "name": "news-explorer_level2",
+  "name": "news-explorer_level3",
   "version": "1.0.0",
-  "description": "frontend css html",
+  "description": "frontend css html js",
   "main": "index.js",
   "browserslist": [
     "defaults"
