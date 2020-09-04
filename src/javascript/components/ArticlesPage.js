@@ -1,11 +1,12 @@
 import BaseComponent from './BaseComponent';
 
-export default class MainPage extends BaseComponent {
+export default class ArticlesPage extends BaseComponent {
   constructor(config, props) {
     super();
     this.api = props.mainApi;
     this.header = props.header;
     this.cardList = props.cardList;
+    this.welcome = props.welcome;
     this.page = config.page;
     this.authButton = config.authButton;
     this.showMoreButton = config.showMoreButton;
@@ -17,6 +18,7 @@ export default class MainPage extends BaseComponent {
     this.header.render(sessionStorage.getItem('userName'));
     this.header.addListeners();
     this._addListeners();
+    this.welcome.getSortedKeyWords();
   }
 
   _getUser() {
@@ -52,9 +54,12 @@ export default class MainPage extends BaseComponent {
     this.listeners = [{
       element: this.showMoreButton,
       event: 'click',
-      callback: ((e) => {
-        this.cardList._renderArticles(e);
-      }),
+      callback: (e) => this.cardList._renderArticles(e),
+    },
+    {
+      element: this.page,
+      event: 'click',
+      callback: (e) => this.cardList.deleteCard(e),
     }];
     this._setListeners(this.listeners);
   }

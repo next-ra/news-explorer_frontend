@@ -57,6 +57,11 @@ export default class MainPage extends BaseComponent {
 
   _addListeners() {
     this.listeners = [{
+      element: this.page,
+      event: 'click',
+      callback: (e) => this.cardList.deleteCard(e),
+    },
+    {
       element: this.authButton,
       event: 'mousedown',
       callback: (e) => this._openPopup(e),

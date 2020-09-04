@@ -1,17 +1,18 @@
 import BaseComponent from './BaseComponent';
 
 export default class Card extends BaseComponent {
-  constructor(config, mainApi) {
+  constructor(config, mainApi, welcome) {
     super();
     this.template = config.template;
     this.api = mainApi;
+    this.welcome = welcome;
   }
 
   create() {
     return this.template.content.cloneNode(true);
   }
 
-  saveCard(event) {
+  saveOrDelete(event) {
     this.article = event.target.closest('.card');
 
     const cardInfo = {
@@ -33,11 +34,13 @@ export default class Card extends BaseComponent {
           this.article.querySelector('.card__tooltip-text').textContent = 'Убрать из сохраненных';
         })
         .catch((err) => console.log(err));
-    } else {
-      this.removeFromSaved();
-    }
+      // у карточки есть иконка корзины - удаляем из базы и из разметки
+    } else if (this.article.querySelector('.card__trash-path')) {
+      this.deleteCard();
+    } else this.removeFromSaved();
   }
 
+  // Метод удаляет метку на карточке на главной странице
   removeFromSaved() {
     this.api.deleteArticle(this.article.id)
       .then((res) => {
@@ -45,6 +48,17 @@ export default class Card extends BaseComponent {
         this.article.id = 'not-saved';
         this.article.querySelector('.card__path').classList.remove('card__path_marked');
         this.article.querySelector('.card__tooltip-text').textContent = 'Сохранить';
+      })
+      .catch((err) => console.log(err));
+  }
+
+  // Этот удаляет карточку и разметку
+  deleteCard() {
+    this.api.deleteArticle(this.article.id)
+      .then((res) => {
+        console.log(res);
+        this.article.parentNode.removeChild(this.article);
+        this.welcome.getSortedKeyWords();
       })
       .catch((err) => console.log(err));
   }

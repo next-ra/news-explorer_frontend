@@ -15,7 +15,6 @@ import CardList from '../../javascript/components/CardList';
 import CARDLIST_CONFIG from '../../javascript/constants/cardlist-config';
 import Search from '../../javascript/components/Search';
 import SEARCH_CONFIG from '../../javascript/constants/search-config';
-
 import PopupSignUp from '../../javascript/components/PopupSignUp';
 import POPUP_SIGN_UP_CONFIG from '../../javascript/constants/popup-sign-up-config';
 import PopupSignIn from '../../javascript/components/PopupSignIn';

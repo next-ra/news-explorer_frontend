@@ -11,7 +11,7 @@ export default class CardList extends BaseComponent {
   }
 
   _dateFormat(date) {
-    // добавить запятую перед годом
+    // добавить запятую перед годом?
     return new Date(date).toLocaleString('ru', {
       day: 'numeric',
       month: 'long',
@@ -19,18 +19,24 @@ export default class CardList extends BaseComponent {
     }).slice(0, -2);
   }
 
+  deleteCard(e) {
+    if (e.target.classList.contains('bookmark')) {
+      this.card.saveOrDelete(e);
+    }
+  }
+
   _addCard(article) {
     const clone = this.card.create();
     const user = sessionStorage.getItem('userName');
     if (user) {
+      // если пользователь залогинен то подсказка меняется
       clone.querySelector('.card__tooltip-text').textContent = 'Сохранить статью';
-
-      this._addListener({
-        element: clone.querySelector('.card__bookmark'),
-        event: 'click',
-        callback: (e) => this.card.saveCard(e),
-      });
     }
+    // если у карточки есть иконка корзины подсказка меняется на другую
+    if (clone.querySelector('.card__trash-path')) {
+      clone.querySelector('.card__tooltip-text').textContent = 'Удалить статью';
+    }
+    // если есть лейба с ключевым словом
     if (clone.querySelector('.card__label-text')
     ) { clone.querySelector('.card__label-text').textContent = article.keyword; }
     clone.querySelector('.card__image').src = article.urlToImage || article.image || this.defaultImage;
