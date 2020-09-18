@@ -1,0 +1,18 @@
+.about__text {
+  font: normal 400 18px/24px Roboto, Arial, Helvetica;
+  margin: 24px 0 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__text {
+    margin: calc((100vw - 768px) / (1440 - 768) * (24 - 11) + 11px) 0
+      calc((100vw - 768px) / (1440 - 768) * (0 - 22) + 22px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__text {
+    margin: calc((100vw - 320px) / (768 - 320) * (11 - 18) + 18px) 0
+      calc((100vw - 320px) / (768 - 320) * (22 - 24) + 24px);
+  }
+}

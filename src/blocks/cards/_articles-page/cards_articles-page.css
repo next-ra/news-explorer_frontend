@@ -1,0 +1,15 @@
+.cards.cards_articles-page {
+  margin: 0 0 68px;
+}
+
+@media screen and (max-width: 1440px) {
+  .cards.cards_articles-page {
+    margin: 0 0 calc((100vw - 768px) / (1440 - 768) * (68 - 24) + 24px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .cards.cards_articles-page {
+    margin: calc((100vw - 320px) / (768 - 320) * (0 - 18) + 18px) 0
+      calc((100vw - 320px) / (768 - 320) * (24 - 18) + 18px);
+  }
+}

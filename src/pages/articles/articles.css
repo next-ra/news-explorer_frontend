@@ -1,0 +1,13 @@
+@import '../../vendor/fonts.css';
+@import '../../blocks/page/page.css';
+@import '../../blocks/header/header.css';
+@import '../../blocks/nav-box/nav-box.css';
+@import '../../blocks/button/button.css';
+@import '../../blocks/button/__auth-svg/button__auth-svg.css';
+@import '../../blocks/content-wrapper/content-wrapper.css';
+@import '../../blocks/content-wrapper/_bg-grey/content-wrapper_bg-grey.css';
+@import '../../blocks/cards/cards.css';
+@import '../../blocks/card/card.css';
+@import '../../blocks/footer/footer.css';
+@import '../../blocks/menu-icon/menu-icon.css';
+@import '../../blocks/welcome/welcome.css';

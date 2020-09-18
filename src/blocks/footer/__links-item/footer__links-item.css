@@ -1,0 +1,19 @@
+.footer__links-item {
+  font: normal 500 18px/48px Roboto, Arial, Helvetica;
+  color: #1a1b22;
+
+  list-style: none;
+
+  margin-left: 40px;
+}
+
+@media screen and (min-width: 751px) and (max-width: 1440px) {
+  .footer__links-item {
+    margin-left: calc((100vw - 751px) / (1440 - 751) * (40 - 20) + 20px);
+  }
+}
+@media screen and (max-width: 750px) {
+  .footer__links-item {
+    margin: 0;
+  }
+}

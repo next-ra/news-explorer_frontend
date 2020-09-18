@@ -1,0 +1,24 @@
+@import '_dark/header__link_highlighted_dark.css';
+
+.header__link_highlighted {
+  position: relative;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.header__link_highlighted::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 650px) {
+  .header__link_highlighted::after {
+    display: none;
+  }
+}

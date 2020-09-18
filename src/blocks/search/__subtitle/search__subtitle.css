@@ -1,0 +1,16 @@
+.search__subtitle {
+  font: normal 400 18px/24px Roboto, Arial, Helvetica;
+
+  margin: 32px 0 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .search__subtitle {
+    margin: calc((100vw - 768px) / (1440 - 768) * (32 - 16) + 16px) 0 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search__subtitle {
+    margin: 16px 0 0;
+  }
+}

@@ -1,0 +1,7 @@
+@import '__subtitle/search__subtitle.css';
+@import '__title/search__title.css';
+@import '__wrapper/search__wrapper.css';
+
+.search {
+  color: #fff;
+}

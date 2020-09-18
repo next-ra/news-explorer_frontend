@@ -1,0 +1,19 @@
+.footer__social-links {
+  width: 100%;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 750px) {
+  .footer__social-links {
+    margin-left: calc((100vw - 768px) / (1440 - 768) * (28 - 2) + 2px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer__social-links {
+    margin-left: 28px;
+  }
+}

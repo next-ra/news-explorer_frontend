@@ -1,0 +1,11 @@
+.not-found__subtitle {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 333px;
+  text-align: center;
+  color: #b6bcbf;
+}

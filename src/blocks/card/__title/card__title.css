@@ -1,0 +1,29 @@
+.card__title {
+  font: normal 400 26px/30px Roboto-Slab, Arial, Helvetica;
+  color: #1a1b22;
+
+  margin: 12px 0 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1440px) {
+  .card__title {
+    font-size: calc((100vw - 768px) / (1440 - 768) * (26 - 22) + 22px);
+    line-height: calc((100vw - 768px) / (1440 - 768) * (30 - 24) + 24px);
+
+    margin: calc((100vw - 768px) / (1440 - 768) * (12 - 9) + 9px) 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__title {
+    font-size: 22px;
+    line-height: calc((100vw - 320px) / (768 - 320) * (24 - 28) + 28px);
+
+    margin: 9px 0 0;
+  }
+}

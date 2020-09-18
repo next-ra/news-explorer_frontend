@@ -1,0 +1,26 @@
+@import '_bg-grey/content-wrapper_bg-grey.css';
+@import '__bg-image/content-wrapper__bg-image.css';
+@import '_footer-bottom/content-wrapper_footer-bottom.css';
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 104px 1fr 104px;
+
+  position: relative;
+}
+
+@media screen and (max-width: 1440px) {
+  .content-wrapper {
+    grid-template-columns:
+      calc((100vw - 768px) / (1440 - 768) * (104 - 40) + 40px)
+      1fr calc((100vw - 768px) / (1440 - 768) * (104 - 40) + 40px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns:
+      calc((100vw - 320px) / (768 - 320) * (40 - 16) + 16px)
+      1fr calc((100vw - 320px) / (768 - 320) * (40 - 16) + 16px);
+  }
+}

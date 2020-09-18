@@ -1,0 +1,9 @@
+@import '__title/not-found__title.css';
+@import '__subtitle/not-found__subtitle.css';
+@import '_active/not-found_active.css';
+.not-found {
+  grid-column: 2;
+  display: none;
+  place-items: center;
+  margin: 80px 0;
+}

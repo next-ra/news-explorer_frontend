@@ -1,0 +1,20 @@
+.welcome__undertitle {
+  margin: 38px 0 0;
+
+  color: rgba(26, 27, 34, 0.5);
+}
+@media screen and (max-width: 1440px) {
+  .welcome__undertitle {
+    margin: calc((100vw - 768px) / (1440 - 768) * (38 - 26) + 26px) 0 0;
+
+    font-size: calc((100vw - 768px) / (1440 - 768) * (18 - 14) + 14px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .welcome__undertitle {
+    margin: calc((100vw - 320px) / (768 -320) * (26 - 8) + 8px) 0 0;
+
+    font-size: calc((100vw - 320px) / (768- 320) * (14 - 12) + 12px);
+  }
+}

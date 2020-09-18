@@ -1,0 +1,16 @@
+.page__about {
+  grid-column: 2;
+  margin: 32px 0 86px;
+}
+
+@media screen and (max-width: 1440px) {
+  .page__about {
+    margin-bottom: calc((100vw - 768px) / (1440 - 768) * (86 - 44) + 44px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page__about {
+    margin-bottom: calc((100vw - 320px) / (768 - 320) * (44 - 14) + 14px);
+  }
+}

@@ -1,0 +1,6 @@
+@import './_marked/card__path_marked.css';
+
+.card__path {
+  transition: stroke 0.5s;
+  position: relative;
+}

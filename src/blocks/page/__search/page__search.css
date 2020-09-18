@@ -1,0 +1,17 @@
+.page__search {
+  grid-column: 2;
+  margin-bottom: 80px;
+  z-index: 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .page__search {
+    margin-bottom: calc((100vw - 768px) / (1440 - 768) * (80 - 44) + 44px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page__search {
+    margin-bottom: calc((100vw - 320px) / (768 - 320) * (44 - 32) + 32px);
+  }
+}

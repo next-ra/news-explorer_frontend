@@ -1,0 +1,49 @@
+.card__bookmark {
+  box-sizing: border-box;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: #fff;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.card__bookmark:hover .card__path {
+  stroke: black;
+  transition: stroke 0.5s;
+}
+
+.card__bookmark:hover .card__trash-path {
+  fill: black;
+  transition: fill 0.5s;
+}
+
+.card__bookmark:hover + .card__tooltip {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+@media screen and (max-width: 1440px) {
+  .card__bookmark {
+    top: calc((100vw - 768px) / (1440 - 768) * (24 - 8) + 8px);
+    right: calc((100vw - 768px) / (1440 - 768) * (24 - 8) + 8px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__bookmark {
+    top: calc((100vw - 320px) / (768 - 320) * (8 - 16) + 16px);
+    right: calc((100vw - 320px) / (768 - 320) * (8 - 16) + 16px);
+  }
+}

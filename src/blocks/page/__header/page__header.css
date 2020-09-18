@@ -1,0 +1,15 @@
+.page__header {
+  height: 80px;
+  grid-column: 2;
+}
+
+@media screen and (max-width: 1440px) {
+  .page__header {
+    height: calc((100vw - 768px) / (1440 - 768) * (80 - 66) + 66px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .page__header {
+    height: calc((100vw - 320px) / (768 - 320) * (66 - 56) + 56px);
+  }
+}

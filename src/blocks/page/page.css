@@ -1,0 +1,48 @@
+@import '__header/page__header.css';
+@import '__search/page__search.css';
+@import '__cards/page__cards.css';
+@import '__about/page__about.css';
+@import '__footer/page__footer.css';
+@import '__welcome/page__welcome.css';
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  max-width: 1440px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+/* Затемнение страницы при активном мобильном меню */
+.page::after {
+  content: '';
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s;
+  display: none;
+  z-index: 10;
+}
+
+@media screen and (max-width: 650px) {
+  .page_menu_active::after {
+    opacity: 0.5;
+    transition: opacity 0.4s;
+    display: unset;
+  }
+}

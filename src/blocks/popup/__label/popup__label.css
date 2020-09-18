@@ -1,0 +1,8 @@
+.popup__label {
+  font: normal 400 12px/15px Inter, Arial, Helvetica;
+  color: #2f71e5;
+
+  padding-left: 2px;
+
+  margin: 0;
+}

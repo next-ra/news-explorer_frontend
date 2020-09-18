@@ -1,0 +1,41 @@
+.card__tooltip {
+  height: 40px;
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 24px;
+  right: 70px;
+
+  background-color: #fff;
+  border-radius: 8px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0 10px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+@media screen and (max-width: 1440px) {
+  .card__tooltip {
+    top: calc((100vw - 768px) / (1440 - 768) * (24 - 8) + 8px);
+    right: calc((100vw - 1160px) / (1440 - 1160) * (70 - 60) + 60px);
+  }
+}
+
+@media screen and (max-width: 1159px) {
+  .card__tooltip {
+    top: calc((100vw - 768px) / (1160 - 768) * (63 - 52) + 52px);
+    right: calc((100vw - 768px) / (1160 - 768) * (18 - 8) + 8px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__tooltip {
+    top: calc((100vw - 320px) / (768 - 320) * (52 - 60) + 60px);
+    right: calc((100vw - 320px) / (768 - 320) * (8 - 16) + 16px);
+  }
+}

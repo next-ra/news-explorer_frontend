@@ -1,0 +1,7 @@
+.card__tooltip-text {
+  font: normal 500 12px Roboto, Arial, Helvetica;
+
+  margin: 0;
+
+  border-radius: 10px;
+}

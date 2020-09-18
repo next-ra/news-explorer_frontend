@@ -1,0 +1,7 @@
+.footer__social-link-svg {
+  transition: 2s;
+}
+.footer__social-link:hover .footer__social-link-svg {
+  transition: 0.4s;
+  fill: #347eff;
+}

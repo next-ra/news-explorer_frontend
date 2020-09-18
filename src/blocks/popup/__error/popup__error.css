@@ -1,0 +1,21 @@
+.popup__error {
+  font: normal 400 12px Inter, Arial, Helvetica;
+  color: #ff0000;
+
+  display: block;
+
+  margin: 4px 0 10px;
+  height: 13px;
+
+  opacity: 1;
+  pointer-events: none;
+}
+
+.popup__error:nth-last-of-type(2) {
+  margin-bottom: 0;
+}
+
+.popup__error:nth-last-of-type(1) {
+  margin-bottom: -15px;
+  text-align: center;
+}
